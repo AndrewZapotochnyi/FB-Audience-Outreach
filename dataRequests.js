@@ -5,7 +5,7 @@ const countryCodeDataSet = require('./countryCodeDataSet')
 
 // Step 2 - After the country_code has been retrieved, do a city search
 
-access_token = "EAAVZBU9HiO5IBAAwgqfH8JC78MdZB2ZAziZA1W5dAbiWS0R2tVkGkz9wrpMd5vX9LufZAcyl5a9pIwY0shZBXfwNTaZBm1Rw04XchDejlAWuR3OZB5MMKkZBih4aUbCE82gVFuKQNrHr8TuZCZCZB3qIVLbGQO9phSjxgf9yMrlABzEtgx6phx7Hc4LqcL0tfOhEUG6GZArbdHFrasonz4vmKeBZCTUj2Bz1p0XGVmtFXytC4VKQZDZD";
+access_token = "X";
 let cityStep2 = "Paris";
 let country_code = "FR";
 
