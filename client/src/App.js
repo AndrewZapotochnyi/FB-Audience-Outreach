@@ -6,21 +6,22 @@ import Navigation from "./components/Nav";
 
 function App() {
 
-  const [firstInterest, setFirstInterest] = useState({name: "Andrew"})
+  const [firstInterest, setFirstInterest] = useState({name: "*interest*"})
 
   useEffect(() => {
     axios.get('/interests')
     .then(res => {
       if (res.data) {
-        setFirstInterest({name: res.data[1].name})
+        setFirstInterest({name: res.data[0].name})
       } 
     })
+    .catch(res => console.log(res))
   }, [])
 
 
   return (
     <div className="App">
-         <Navigation name={firstInterest.name}  />
+         <Navigation />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
