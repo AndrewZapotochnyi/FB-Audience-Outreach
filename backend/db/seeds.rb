@@ -1,7 +1,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 require 'json'
-puts "Seeding Data ..."
+puts "Seeding Interests Data ..."
 
 def import_json(file_name)
   JSON.parse(File.read(Rails.root.join('db', file_name)))
