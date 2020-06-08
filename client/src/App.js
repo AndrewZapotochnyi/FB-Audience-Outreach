@@ -1,17 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Navigation from "./components/Nav";
 
 function App() {
 
+  const [firstInterest, setFirstInterest] = useState({name: "Andrew"})
+
   useEffect(() => {
     axios.get('/interests')
-    .then(res => console.log(res))
-  })
+    .then(res => {
+      if (res.data) {
+        setFirstInterest({name: res.data[1].name})
+      } 
+    })
+  }, [])
+
 
   return (
     <div className="App">
+         <Navigation name={firstInterest.name}  />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
