@@ -5,9 +5,10 @@ const countryCodeDataSet = require('./countryCodeDataSet')
 
 // Step 2 - After the country_code has been retrieved, do a city search
 
-access_token = "EAAVZBU9HiO5IBAAwgqfH8JC78MdZB2ZAziZA1W5dAbiWS0R2tVkGkz9wrpMd5vX9LufZAcyl5a9pIwY0shZBXfwNTaZBm1Rw04XchDejlAWuR3OZB5MMKkZBih4aUbCE82gVFuKQNrHr8TuZCZCZB3qIVLbGQO9phSjxgf9yMrlABzEtgx6phx7Hc4LqcL0tfOhEUG6GZArbdHFrasonz4vmKeBZCTUj2Bz1p0XGVmtFXytC4VKQZDZD";
+access_token = ENV["ACCESS_TOKEN"];
 let cityStep2 = "Paris";
 let country_code = "FR";
+let account_number = ENV["ACC_NUN"];
 
 axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${cityStep2}&country_code=${country_code}&type=adgeolocation&access_token=${access_token}`).then(res => {
   console.log("Step 2: ", res.data);
@@ -23,7 +24,7 @@ let region = "Ontario"
 let region_id = "533" 
 let country_codeStep4 = "CA"
 
-axios.get(`https://graph.facebook.com/v7.0/act_1195364647468427/reachestimate?access_token=${access_token}&__activeScenarioIDs=%5B%5D&__activeScenarios=%5B%5D&_app=ADS_MANAGER&_index=58&_reqName=adaccount%2Freachestimate&_reqSrc=AdsTargetingEstimatedReach.react&_sessionID=56312af9a4c00eac&include_headers=false&locale=en_US&method=get&pretty=0&suppress_http_code=1&targeting_spec={
+axios.get(`https://graph.facebook.com/v7.0/act_${account_number}/reachestimate?access_token=${access_token}&__activeScenarioIDs=%5B%5D&__activeScenarios=%5B%5D&_app=ADS_MANAGER&_index=58&_reqName=adaccount%2Freachestimate&_reqSrc=AdsTargetingEstimatedReach.react&_sessionID=56312af9a4c00eac&include_headers=false&locale=en_US&method=get&pretty=0&suppress_http_code=1&targeting_spec={
   "age_max": 65,
   "age_min": 13,
   "geo_locations": {
