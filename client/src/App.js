@@ -52,16 +52,16 @@ export default function App() {
 
         <Switch>
           <Route path="/home">
-            <Home/>
+            <Home />
           </Route>
           <Route path="/about">
-            <About/>
+            <About />
           </Route>
           <Route path="/signup">
-            <SignUp/>
+            <SignUp />
           </Route>
           <Route path="/login">
-            <Login/>
+            <Login />
           </Route>
         </Switch>
       </div>
