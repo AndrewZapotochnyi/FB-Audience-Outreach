@@ -48,6 +48,9 @@ export default function App() {
         </nav>
 
         <Switch>
+          <Route path="/">
+            
+          </Route>
           <Route path="/home">
             <Home />
           </Route>
