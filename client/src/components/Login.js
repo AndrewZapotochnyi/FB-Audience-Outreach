@@ -11,6 +11,7 @@ export default function Login() {
           </label>
           <input type="submit" value="Login"></input>
       </form>
+      <a href="signup">Don't have an account?</a>
     </>
   )
 }
