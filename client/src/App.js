@@ -84,13 +84,13 @@ export default function App() {
         </nav>
 
         <Switch>
-          <Route path="/">
+          <Route path="/home">
             <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
             <Charts reachEstimates={reachEstimates}  />
           </Route>
-          <Route path="/home">
+          {/* <Route path="/home">
             <Home />
-          </Route>
+          </Route> */}
           <Route path="/about">
             <About />
           </Route>
