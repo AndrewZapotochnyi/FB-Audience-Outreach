@@ -5,9 +5,11 @@ import {
   Route, 
   Link
 } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
 import axios from 'axios';
+import Login  from './components/Login';
+import About from './components/About';
+import SignUp from './components/SignUp';
+import Home from './components/Home';
 
 export default function App() {
 
@@ -32,7 +34,7 @@ export default function App() {
           <label>
             <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
             <h1>
-              <Link to="/">Audience Research</Link>
+              <Link to="/home">Audience Research</Link>
             </h1>
           </label>
           <ul>
@@ -49,38 +51,20 @@ export default function App() {
         </nav>
 
         <Switch>
-          <Route path="/">
-
+          <Route path="/home">
+            <Home/>
           </Route>
           <Route path="/about">
-
+            <About/>
           </Route>
           <Route path="/signup">
-            
+            <SignUp/>
           </Route>
           <Route path="/login">
-            
+            <Login/>
           </Route>
         </Switch>
       </div>
-
-      <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-
     </Router>
   );
 }
