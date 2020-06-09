@@ -13,6 +13,7 @@ import SignUp from './components/SignUp';
 import Home from './components/Home';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
+import Country from "./components/Country";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 require('dotenv').config()
@@ -93,7 +94,7 @@ export default function App() {
           <Route path="/home">
             <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
             {reachEstimates.length && <Charts reachEstimates={reachEstimates}  />}
-            
+            <Country />
           </Route>
           {/* <Route path="/home">
             <Home />
