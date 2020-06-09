@@ -4,8 +4,8 @@
 
 const axios = require('axios');
 require('dotenv').config()
-const token = process.env.REACT_APP_ACCESS_TOKEN
-const acct = process.env.REACT_APP_ACC_NUM
+const token = process.env.REACT_APP_ACCESS_TOKEN;
+const acct = process.env.REACT_APP_ACC_NUM;
 
 let interestsArray = [{"id":"6003584163107","name":"Advertising"},{"id":"6003840140052","name":"Agriculture"},{"id":"6004140335706","name":"Architecture"},{"id":"6002963523717","name":"Aviation"}]
 
