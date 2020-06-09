@@ -11,10 +11,46 @@ import Login  from './components/Login';
 import About from './components/About';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
+import Filter from "./components/Filter";
+import Charts from "./components/Charts";
+import {getReachEstimate} from "./helpers/getReachEstimate";
 
 export default function App() {
 
+  
+  ///////////////////// FILTER FUNCTIONALITY /////////////////////////
+  // Interest State
   const [firstInterest, setFirstInterest] = useState({name: "*interest*"})
+  const [filterInterest, setFilterInterest] = useState({id:0, name: ""})
+  const [reachEstimates, setReachEstimates] = useState([0,1,2,3])
+  const [searchText, setSearchText] = useState("")
+
+  // Submit Form
+  const onSubmitInterest = function(input) {
+    console.log("Interest is set:", input)
+    setSearchText(input);
+  }
+
+    useEffect(() => {
+      axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=271670627217924|m2E7CC78EEGh4O_jI0mm0pVmAiQ`)
+      .then(res => {
+        if (res) {
+          let response = res.data.data[0];
+          // console.log(response);
+          
+          if (response && response.id) {
+            setFilterInterest({id: response.id, name: response.name});
+            setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
+            // console.log(reachEstimates)
+          }
+          
+        } 
+      })
+    }, [searchText]);
+  
+
+  ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
+
 
   useEffect(() => {
     axios.get('/interests')
@@ -49,7 +85,8 @@ export default function App() {
 
         <Switch>
           <Route path="/">
-            
+            <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
+            <Charts reachEstimates={reachEstimates}  />
           </Route>
           <Route path="/home">
             <Home />
