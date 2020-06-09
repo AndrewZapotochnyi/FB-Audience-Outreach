@@ -15,6 +15,8 @@ import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
+require('dotenv').config()
+const token = process.env.REACT_APP_ACCESS_TOKEN
 export default function App() {
 
   
@@ -22,7 +24,7 @@ export default function App() {
   // Interest State
   const [firstInterest, setFirstInterest] = useState({name: "*interest*"})
   const [filterInterest, setFilterInterest] = useState({id:0, name: ""})
-  const [reachEstimates, setReachEstimates] = useState([0,1,2,3])
+  const [reachEstimates, setReachEstimates] = useState([])
   const [searchText, setSearchText] = useState("")
 
   // Submit Form
@@ -32,7 +34,7 @@ export default function App() {
   }
 
     useEffect(() => {
-      axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=271670627217924|m2E7CC78EEGh4O_jI0mm0pVmAiQ`)
+      axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
       .then(res => {
         if (res) {
           let response = res.data.data[0];
@@ -40,8 +42,13 @@ export default function App() {
           
           if (response && response.id) {
             setFilterInterest({id: response.id, name: response.name});
-            setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
+            //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
             // console.log(reachEstimates)
+            getReachEstimate({id: response.id, name: response.name})
+            .then(res => {
+              // console.log("here is res", res)
+              setReachEstimates(res)
+            })
           }
           
         } 
@@ -82,11 +89,12 @@ export default function App() {
             </button>
           </div> 
         </nav>
-
+        {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         <Switch>
           <Route path="/home">
             <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
-            <Charts reachEstimates={reachEstimates}  />
+            {reachEstimates.length && <Charts reachEstimates={reachEstimates}  />}
+            
           </Route>
           {/* <Route path="/home">
             <Home />

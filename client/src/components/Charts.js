@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 
 export default function Charts(props) {
 
-  console.log("Test props")
-  console.log(props)
+  
+  console.log("Here are pps", props)
   
 
  
 
       const chartsRender = props.reachEstimates.map(function(item, i){
-        console.log(item);
-        return <li key={i}>Test</li>
+        return <li key={i}>{item.data.data.users}</li>
       })
     
     return (
