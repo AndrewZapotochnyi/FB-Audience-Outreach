@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import axios from 'axios';
+import './App.css';
 import Login  from './components/Login';
 import About from './components/About';
 import SignUp from './components/SignUp';
@@ -25,29 +26,25 @@ export default function App() {
     .catch(res => console.log(res))
   }, [])
 
-
   return (
-
     <Router>
       <div>
-        <nav>
-          <label>
+        <nav className="Nav">
+          <div className="Nav-logo-title">
             <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
-            <h1>
-              <Link to="/home">Audience Research</Link>
-            </h1>
-          </label>
-          <ul>
-            <li>
+            <h1><Link to="/home">Audience Research</Link></h1>
+          </div>
+          <div className="Nav-links">
+            <button className="Nav-button">
               <Link to="/about">About</Link>
-            </li>
-            <li>
+            </button>
+            <button className="Nav-button">
               <Link to="/signup">Sign Up</Link>
-            </li>
-            <li>
+            </button>
+            <button className="Nav-button">
               <Link to="/login">Login</Link>
-            </li>
-          </ul>
+            </button>
+          </div> 
         </nav>
 
         <Switch>
