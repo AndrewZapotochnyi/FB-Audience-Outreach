@@ -58,7 +58,6 @@ export default function App() {
 
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
 
-
   useEffect(() => {
     axios.get('/interests')
     .then(res => {
