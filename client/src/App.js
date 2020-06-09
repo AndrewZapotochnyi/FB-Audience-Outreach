@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router, 
+  Switch, 
+  Route, 
+  Link
+} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Navigation from "./components/Nav";
 
-function App() {
+export default function App() {
 
   const [firstInterest, setFirstInterest] = useState({name: "*interest*"})
 
@@ -20,8 +25,46 @@ function App() {
 
 
   return (
-    <div className="App">
-         <Navigation />
+
+    <Router>
+      <div>
+        <nav>
+          <label>
+            <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
+            <h1>
+              <Link to="/">Audience Research</Link>
+            </h1>
+          </label>
+          <ul>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/signup">Sign Up</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/">
+
+          </Route>
+          <Route path="/about">
+
+          </Route>
+          <Route path="/signup">
+            
+          </Route>
+          <Route path="/login">
+            
+          </Route>
+        </Switch>
+      </div>
+
+      <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -37,7 +80,7 @@ function App() {
         </a>
       </header>
     </div>
+
+    </Router>
   );
 }
-
-export default App;
