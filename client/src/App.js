@@ -49,7 +49,7 @@ export default function App() {
             setFilterInterest({id: response.id, name: response.name});
             //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
             // console.log(reachEstimates)
-            getReachEstimate({id: response.id, name: response.name}, minAge, maxAge)
+            getReachEstimate({id: response.id, name: response.name}, minAge, maxAge, city)
             .then(res => {
               // console.log("here is res", res)
               setReachEstimates(res)

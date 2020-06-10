@@ -9,7 +9,7 @@ const acct = process.env.REACT_APP_ACC_NUM;
 
 let interestsArray = [{"id":"6003584163107","name":"Advertising"},{"id":"6003840140052","name":"Agriculture"},{"id":"6004140335706","name":"Architecture"},{"id":"6002963523717","name":"Aviation"}]
 
-function getReachEstimate(filterInterest, minAge, maxAge) {
+function getReachEstimate(filterInterest, minAge, maxAge, city) {
 
     console.log("Receiving this: ", filterInterest)
 
@@ -30,11 +30,11 @@ function getReachEstimate(filterInterest, minAge, maxAge) {
           "cities": [
               {
                   "distance_unit": "mile",
-                  "key": "296875",
-                  "name": "Toronto",
-                  "region": "Ontario",
-                  "region_id": "533",
-                  "country": "CA"
+                  "key": "${city.key}",
+                  "name": "${city.name}",
+                  "region": "${city.region}",
+                  "region_id": "${city.region_id}",
+                  "country": "${city.country_code}"
               }
           ],
           "location_types": [
