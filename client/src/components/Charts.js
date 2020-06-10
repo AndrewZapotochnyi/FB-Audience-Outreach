@@ -9,7 +9,7 @@ export default function Charts(props) {
  
 
       const chartsRender = props.reachEstimates.map(function(item, i){
-        return <li key={i}>{item.data.data.users}</li>
+        return <li key={i}>{item.interest_name} {item.data.data.users}</li>
       })
     
     return (

@@ -31,25 +31,25 @@ export default function App() {
   const [countryCode, setCountryCode] = useState("CA")
   const [cities, setCities] = useState([])
   const [city, setCity] = useState("Toronto")
+  const [minAge, setMinAge] = useState(13);
+  const [maxAge, setMaxAge] = useState(65);
 
   // Submit Form
   const onSubmitInterest = function(input) {
-    console.log("Interest is set:", input)
-    setSearchText(input);
-  }
+    // console.log("Interest is set:", input)
+    // setSearchText(input);
 
-    useEffect(() => {
-      axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
+    axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${input}]&limit=10&locale=en_CA&access_token=${token}`)
       .then(res => {
         if (res) {
           let response = res.data.data[0];
-          // console.log(response);
+          console.log(response);
           
           if (response && response.id) {
             setFilterInterest({id: response.id, name: response.name});
             //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
             // console.log(reachEstimates)
-            getReachEstimate({id: response.id, name: response.name})
+            getReachEstimate({id: response.id, name: response.name}, minAge, maxAge)
             .then(res => {
               // console.log("here is res", res)
               setReachEstimates(res)
@@ -58,7 +58,30 @@ export default function App() {
           
         } 
       })
-    }, [searchText]);
+
+  }
+
+    // useEffect(() => {
+    //   axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
+    //   .then(res => {
+    //     if (res) {
+    //       let response = res.data.data[0];
+    //       // console.log(response);
+          
+    //       if (response && response.id) {
+    //         setFilterInterest({id: response.id, name: response.name});
+    //         //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
+    //         // console.log(reachEstimates)
+    //         getReachEstimate({id: response.id, name: response.name}, minAge, maxAge)
+    //         .then(res => {
+    //           // console.log("here is res", res)
+    //           setReachEstimates(res)
+    //         })
+    //       }
+          
+    //     } 
+    //   })
+    // }, [searchText, minAge, maxAge]);
   
 
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
@@ -96,10 +119,11 @@ export default function App() {
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         <Switch>
           <Route path="/home">
-            <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
+            <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} setMinAge={setMinAge} setMaxAge={setMaxAge}/>
             {reachEstimates.length && <Charts reachEstimates={reachEstimates}  />}
             <Country setCountryCode={setCountryCode} countryCode={countryCode}/>
             <City countryCode={countryCode} setCities={setCities} cities={cities} city={city} setCity={setCity} />
+            
           </Route>
           {/* <Route path="/home">
             <Home />
