@@ -14,6 +14,7 @@ import Home from './components/Home';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Country from "./components/Country";
+import City from "./components/City";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 require('dotenv').config()
@@ -27,6 +28,7 @@ export default function App() {
   const [filterInterest, setFilterInterest] = useState({id:0, name: ""})
   const [reachEstimates, setReachEstimates] = useState([])
   const [searchText, setSearchText] = useState("")
+  const [countryCode, setCountryCode] = useState("CA")
 
   // Submit Form
   const onSubmitInterest = function(input) {
@@ -94,7 +96,8 @@ export default function App() {
           <Route path="/home">
             <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
             {reachEstimates.length && <Charts reachEstimates={reachEstimates}  />}
-            <Country />
+            <Country setCountryCode={setCountryCode}/>
+            <City />
           </Route>
           {/* <Route path="/home">
             <Home />
