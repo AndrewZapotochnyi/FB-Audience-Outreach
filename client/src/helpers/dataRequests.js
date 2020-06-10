@@ -2,6 +2,8 @@ const axios = require('axios');
 const countryCodeDataSet = require('./countryCodeDataSet')
 
 // Step 1 - Loop through the country array to find country_code
+// See /components/Country.js
+
 
 // Step 2 - After the country_code has been retrieved, do a city search
 
@@ -16,7 +18,8 @@ axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${cityS
 })
 .catch(res => console.log(res.error));
 
-// Step 3 - Grab the key and region_id from the city item that was selected
+// Step 3 - Grab the key and region_id from the city item that was selected/the first city
+
 
 // Step 4 - Input city/country data into interest query  
 
@@ -65,5 +68,5 @@ axios.get(`https://graph.facebook.com/v7.0/act_${account_number}/reachestimate?a
 }`).then(res => {
    console.log("Step 4: ", res.data);
 }).catch(res => {
-  console.log("Step 4: ", res)
+  console.log("Step 4: ", res.error)
 });
