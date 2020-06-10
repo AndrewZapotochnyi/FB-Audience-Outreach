@@ -66,7 +66,12 @@ function getReachEstimate(filterInterest, minAge, maxAge) {
     //     // console.log(resp.data);
     //     reachEstimates.push(resp.data)
     // });
-    requests.push(axiosRequest);
+    
+
+    requests.push(axiosRequest.then(res => {
+            return {...res, interest_name: interest.name}
+        }
+        ));
   }
 
   return Promise.all(requests);
