@@ -119,10 +119,19 @@ export default function App() {
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         <Switch>
           <Route path="/home">
-            <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} setMinAge={setMinAge} setMaxAge={setMaxAge}/>
-            {reachEstimates.length && <Charts reachEstimates={reachEstimates}  />}
-            <Country setCountryCode={setCountryCode} countryCode={countryCode}/>
-            <City countryCode={countryCode} setCities={setCities} cities={cities} city={city} setCity={setCity} />
+            <Filter 
+              name={firstInterest.name} 
+              onSubmitInterest={onSubmitInterest} 
+              setMinAge={setMinAge} 
+              setMaxAge={setMaxAge} 
+              setCountryCode={setCountryCode} 
+              countryCode={countryCode} 
+              setCities={setCities} 
+              cities={cities} city={city} 
+              setCity={setCity}
+              city={city}/>
+            {reachEstimates.length && <Charts reachEstimates={reachEstimates} />}
+           
             
           </Route>
           {/* <Route path="/home">

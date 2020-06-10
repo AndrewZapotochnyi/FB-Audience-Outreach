@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Age from './filter_components/Age';
+import Country from "./Country";
+import City from "./City";
 
 export default function Filter(props) {
 
@@ -18,6 +20,10 @@ export default function Filter(props) {
   return (
     <div className="filter">
     <h1>Filter</h1>
+
+      <Country setCountryCode={props.setCountryCode} countryCode={props.countryCode}/>
+      <City countryCode={props.countryCode} setCities={props.setCities} cities={props.cities} city={props.city} setCity={props.setCity} />
+
       <Age setMinAge={props.setMinAge} setMaxAge={props.setMaxAge}/>
       <section className="search" >
   
