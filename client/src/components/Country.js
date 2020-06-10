@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import City from "./City";
 
 const axios = require('axios');
 
 export default function Country(props) {
 
-  const [ countries, setCountries ] = useState(["Canada"]);
+  const [ countries, setCountries ] = useState("Canada");
 
   useEffect (() => {
     axios.get('/countries')
