@@ -26,6 +26,8 @@ export default function App() {
   const [filterInterest, setFilterInterest] = useState({id:0, name: ""})
   const [reachEstimates, setReachEstimates] = useState([])
   const [searchText, setSearchText] = useState("")
+  const [minAge, setMinAge] = useState(13);
+  const [maxAge, setMaxAge] = useState(65);
 
   // Submit Form
   const onSubmitInterest = function(input) {
@@ -44,7 +46,7 @@ export default function App() {
             setFilterInterest({id: response.id, name: response.name});
             //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
             // console.log(reachEstimates)
-            getReachEstimate({id: response.id, name: response.name})
+            getReachEstimate({id: response.id, name: response.name}, minAge, maxAge)
             .then(res => {
               // console.log("here is res", res)
               setReachEstimates(res)
@@ -53,7 +55,7 @@ export default function App() {
           
         } 
       })
-    }, [searchText]);
+    }, [searchText, minAge, maxAge]);
   
 
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
@@ -91,7 +93,7 @@ export default function App() {
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         <Switch>
           <Route path="/home">
-            <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} />
+            <Filter name={firstInterest.name} onSubmitInterest={onSubmitInterest} setMinAge={setMinAge} setMaxAge={setMaxAge}/>
             {reachEstimates.length && <Charts reachEstimates={reachEstimates}  />}
             
           </Route>

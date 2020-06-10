@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Age from './filter_components/Age';
 
 export default function Filter(props) {
 
@@ -17,8 +18,9 @@ export default function Filter(props) {
   return (
     <div className="filter">
     <h1>Filter</h1>
+      <Age setMinAge={props.setMinAge} setMaxAge={props.setMaxAge}/>
       <section className="search" >
-     
+  
         <input
           placeholder={interest}
           onChange={event => setInterest(event.target.value)}
