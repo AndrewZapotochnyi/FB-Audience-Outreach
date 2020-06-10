@@ -31,16 +31,14 @@ export default function App() {
 
   // Submit Form
   const onSubmitInterest = function(input) {
-    console.log("Interest is set:", input)
-    setSearchText(input);
-  }
+    // console.log("Interest is set:", input)
+    // setSearchText(input);
 
-    useEffect(() => {
-      axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
+    axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${input}]&limit=10&locale=en_CA&access_token=${token}`)
       .then(res => {
         if (res) {
           let response = res.data.data[0];
-          // console.log(response);
+          console.log(response);
           
           if (response && response.id) {
             setFilterInterest({id: response.id, name: response.name});
@@ -55,7 +53,30 @@ export default function App() {
           
         } 
       })
-    }, [searchText, minAge, maxAge]);
+
+  }
+
+    // useEffect(() => {
+    //   axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
+    //   .then(res => {
+    //     if (res) {
+    //       let response = res.data.data[0];
+    //       // console.log(response);
+          
+    //       if (response && response.id) {
+    //         setFilterInterest({id: response.id, name: response.name});
+    //         //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
+    //         // console.log(reachEstimates)
+    //         getReachEstimate({id: response.id, name: response.name}, minAge, maxAge)
+    //         .then(res => {
+    //           // console.log("here is res", res)
+    //           setReachEstimates(res)
+    //         })
+    //       }
+          
+    //     } 
+    //   })
+    // }, [searchText, minAge, maxAge]);
   
 
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
