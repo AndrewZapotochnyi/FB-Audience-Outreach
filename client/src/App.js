@@ -33,7 +33,14 @@ export default function App() {
   const [city, setCity] = useState("Toronto")
   const [minAge, setMinAge] = useState(13);
   const [maxAge, setMaxAge] = useState(65);
-
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    if (localStorage.jwt) 
+    {
+      setLoggedIn(true);
+  }
+}, [])
+  
   // Submit Form
   const onSubmitInterest = function(input) {
     // console.log("Interest is set:", input)
@@ -108,12 +115,22 @@ export default function App() {
             <button className="Nav-button">
               <Link to="/about">About</Link>
             </button>
-            <button className="Nav-button">
+            {!loggedIn && <div><button className="Nav-button">
               <Link to="/signup">Sign Up</Link>
             </button>
             <button className="Nav-button">
-              <Link to="/login">Login</Link>
-            </button>
+            <Link to="/login">Login</Link>
+          </button>
+          </div>
+          }
+          {loggedIn && <div>
+            <button className="Nav-button" onClick={() => {
+              localStorage.removeItem("jwt")
+              setLoggedIn(false)
+            }
+            }>Logout</button>
+          </div>}
+          
           </div> 
         </nav>
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
@@ -144,7 +161,10 @@ export default function App() {
             <SignUp />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login 
+            setLoggedIn={setLoggedIn}
+            loggedIn={loggedIn}
+            />
           </Route>
         </Switch>
       </div>
