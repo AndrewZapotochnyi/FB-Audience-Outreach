@@ -18,6 +18,20 @@ import {HorizontalBar} from 'react-chartjs-2';
 //   ]
 // };
 
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 
 
@@ -25,7 +39,24 @@ import {HorizontalBar} from 'react-chartjs-2';
 
   const Charts = ({ reachEstimates }) => {
   
+  const categoryTypes = ["education_statuses", "income", "life_events", "family_statuses" , "relationship_statuses" , "industries", "interests","behaviors"]
+  
+ 
+  // let typesRender = function() {
+  //   return (<div>
+  //     {categoryTypes.map((type, index) => (
+  //         <Button>{type}</Button>
+  //     ))}
+  //     </div>);    
+  // }
 
+  const typesRender = categoryTypes.map(type => {
+    return (
+      <Button>{type}</Button> )
+  })
+  ;
+  
+  
   
 
   const defaultChartsData = {
@@ -47,6 +78,12 @@ import {HorizontalBar} from 'react-chartjs-2';
 
     return (
       <ul>
+        <div>
+          <ButtonGroup color="primary" aria-label="outlined primary button group">
+            {typesRender}
+          </ButtonGroup>
+        </div>
+
         {/* {chartsRender} */}
         <HorizontalBar
           data={defaultChartsData}

@@ -1,7 +1,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup, or migrated with rake db:migrate).
 
 require 'json'
-puts "Seeding Interests Data ..."
+puts "Seeding Data ..."
 
 def import_json(file_name)
   JSON.parse(File.read(Rails.root.join('db', file_name)))
@@ -23,5 +23,13 @@ Country.destroy_all
 countriesData.each { |n| 
   Country.create(name: n["name"], country_code: n["country_code"])
 }
+
+user1 = User.new
+user1.first_name = 'Geralt'
+user1.last_name = 'OfRivia'
+user1.email = 'user1@example.com'
+user1.password = 'password'
+user1.password_confirmation = 'password'
+user1.save
 
 puts "Seeds imported!"

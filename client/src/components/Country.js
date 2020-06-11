@@ -6,7 +6,7 @@ const axios = require('axios');
 
 export default function Country(props) {
 
-  const [ countries, setCountries ] = useState("Canada");
+  const [ countries, setCountries ] = useState(["Canada"]);
 
   useEffect (() => {
     axios.get('/countries')
@@ -15,6 +15,8 @@ export default function Country(props) {
     })
     .catch(res => console.log(res))
   }, [])
+
+  console.log(countries)
 
   return (
     <Autocomplete
