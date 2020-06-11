@@ -8,7 +8,7 @@ export default function Login() {
   const handleOnSubmit = (event) => {
     event.preventDefault()
     let request = {"auth": {"email": email, "password": password}}
-fetch('/api/user_token', {
+fetch('http://localhost:3001/api/user_token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
