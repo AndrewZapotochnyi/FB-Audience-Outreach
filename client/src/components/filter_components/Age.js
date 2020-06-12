@@ -17,14 +17,9 @@ export default function Age(props) {
   })
 
   const maxAgesRender = ages.map(function(item, i){
-    if (i === ages.length - 1) {
-      return <option selected={true} key={item} value={item}>{item}</option>
-    } else {
       return <option key={item} value={item}>{item}</option>
-    }
   })
-
-
+  
   return (
     <div className="age">
       <div> Age min</div>
@@ -33,7 +28,7 @@ export default function Age(props) {
       </select>
 
       <div> Age max</div>
-      <select name="age_max" id="age_max" onChange={event => props.setMaxAge(parseInt(event.target.value))}>
+      <select defaultValue="65" name="age_max" id="age_max" onChange={event => props.setMaxAge(parseInt(event.target.value))}>
         {maxAgesRender}
       </select>
 

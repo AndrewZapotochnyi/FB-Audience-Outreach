@@ -10,11 +10,8 @@ import './App.css';
 import Login  from './components/Login';
 import About from './components/About';
 import SignUp from './components/SignUp';
-import Home from './components/Home';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
-import Country from "./components/Country";
-import City from "./components/City";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 require('dotenv').config()
@@ -30,7 +27,7 @@ export default function App() {
   const [searchText, setSearchText] = useState("")
   const [countryCode, setCountryCode] = useState("CA")
   const [cities, setCities] = useState([])
-  const [city, setCity] = useState("Toronto")
+  const [city, setCity] = useState([""])
   const [minAge, setMinAge] = useState(13);
   const [maxAge, setMaxAge] = useState(65);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -200,11 +197,11 @@ export default function App() {
               setCountryCode={setCountryCode} 
               countryCode={countryCode} 
               setCities={setCities} 
-              cities={cities} city={city} 
+              cities={cities} 
+              city={city} 
               setCity={setCity}
               city={city}/>
             {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory}/>}
-           
             
           </Route>
           {/* <Route path="/home">
