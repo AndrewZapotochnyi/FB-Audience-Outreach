@@ -13,15 +13,14 @@ export default function Country(props) {
     .then(res => {
         setCountries(res.data)
     })
-    .catch(res => console.log(res))
+    .catch(console.log)
   }, [])
-
 
   return (
     <Autocomplete
       id="country-dropdown"
       options={countries}
-      getOptionLabel={(option) => option.name}
+      getOptionLabel={option => option.name}
       style={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Choose A Country" variant="outlined"/>}
       onChange={(event, value) => props.setCountryCode(value.country_code)}

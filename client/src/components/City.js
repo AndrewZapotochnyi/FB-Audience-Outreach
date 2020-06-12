@@ -11,9 +11,9 @@ export default function City(props) {
   let country_code = props.countryCode;
 
   const [ searchText, setSearchText ] = useState("")
+  const [ error, setError ] = useState(false)
 
   useEffect (() => {
-
     axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${searchText}&country_code=${country_code}&type=adgeolocation&access_token=${access_token}`)
     .then(res => {
       props.setCities(res.data.data);
@@ -30,7 +30,6 @@ export default function City(props) {
       renderInput={(params) => <TextField {...params} label="City Dropdown" variant="outlined"/>}
       onChange={(event, value) => props.setCity(value)}
       onInputChange={(event, value) => setSearchText(value)}
-      value={city}
     />
   )
 }
