@@ -8,6 +8,7 @@ import {
 import axios from 'axios';
 import './App.css';
 import Login  from './components/Login';
+import Profile  from './components/Profile';
 import About from './components/About';
 import SignUp from './components/SignUp';
 import Filter from "./components/Filter";
@@ -182,8 +183,11 @@ export default function App() {
               setLoggedIn(false)
             }
             }>Logout</button>
-          </div>}
-          
+            <button className="Nav-botton">
+            <Link to="/profile">Profile</Link>
+            </button>
+          </div>
+          }
           </div> 
         </nav>
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
@@ -218,6 +222,9 @@ export default function App() {
             setLoggedIn={setLoggedIn}
             loggedIn={loggedIn}
             />
+          </Route>
+          <Route path="/profile">
+            <Profile/>
           </Route>
         </Switch>
       </div>
