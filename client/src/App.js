@@ -34,17 +34,25 @@ export default function App() {
   const [minAge, setMinAge] = useState(13);
   const [maxAge, setMaxAge] = useState(65);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [listOfInterests, setListOfInterests] = useState({})
+  const [selectedInterestCategory, setSelectedInterestCategory ] = useState("income")
+  
+  
   useEffect(() => {
     if (localStorage.jwt) 
     {
       setLoggedIn(true);
-  }
-}, [])
+      }
+    }, [])
   
   // Submit Form
   const onSubmitInterest = function(input) {
     // console.log("Interest is set:", input)
     // setSearchText(input);
+
+
+    
+
 
     axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${input}]&limit=10&locale=en_CA&access_token=${token}`)
       .then(res => {
@@ -55,11 +63,12 @@ export default function App() {
           if (response && response.id) {
             setFilterInterest({id: response.id, name: response.name});
             //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
-            // console.log(reachEstimates)
-            getReachEstimate({id: response.id, name: response.name}, minAge, maxAge, city)
+            console.log("SELECTED INTERESTS", listOfInterests[selectedInterestCategory])
+            getReachEstimate({id: response.id, name: response.name}, minAge, maxAge, city, listOfInterests[selectedInterestCategory], selectedInterestCategory)
             .then(res => {
               // console.log("here is res", res)
               setReachEstimates(res)
+              // console.log(res)
             })
           }
           
@@ -93,11 +102,58 @@ export default function App() {
 
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
 
+  ////////////////////// INTERESTS MANAGEMENT //////////////////////////////
+
+  const interestIndustries = [];
+  const interestIncome = [];
+  const interestLifeEvents = [];
+  const interestFamilyStatuses = [];
+  const interestRelationshipStatuses = [];
+  const interestEducationStatuses = [];
+  const interestsInterests = [];
+  const interestsBehaviors = [];
+
+
   useEffect(() => {
     axios.get('/interests')
     .then(res => {
       if (res.data) {
         setFirstInterest({name: res.data[0].name})
+        
+        for (let i of res.data) {
+          if (i.type_category === "industries") {
+            interestIndustries.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "income") {
+            interestIncome.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "life_events") {
+            interestLifeEvents.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "family_statuses") {
+            interestFamilyStatuses.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "relationship_statuses") {
+            interestRelationshipStatuses.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "education_statuses") {
+            interestEducationStatuses.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "interests") {
+            interestsInterests.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          } else if (i.type_category === "behaviors") {
+            interestsBehaviors.push({"id": `${i.facebook_id}`,"name":`${i.name}`})
+          }
+        }
+        
+        setListOfInterests({
+          industries: interestIndustries,
+          income: interestIncome,
+          life_events: interestLifeEvents,
+          family_statuses: interestFamilyStatuses,
+          relationship_statuses: interestRelationshipStatuses,
+          education_statuses: interestEducationStatuses,
+          interests: interestsInterests,
+          behaviors: interestsBehaviors
+        });
+
+
+        // console.log("Education Statuses",interestIncome)
+
       } 
     })
     .catch(res => console.log(res))
@@ -147,7 +203,7 @@ export default function App() {
               cities={cities} city={city} 
               setCity={setCity}
               city={city}/>
-            {reachEstimates.length && <Charts reachEstimates={reachEstimates} />}
+            {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory}/>}
            
             
           </Route>

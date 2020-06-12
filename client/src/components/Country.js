@@ -16,6 +16,10 @@ export default function Country(props) {
     .catch(res => console.log(res))
   }, [])
 
+  // if (!props.countryCode) {
+  //   props.setCountryCode("CA")
+  // }
+
 
   return (
     <Autocomplete
@@ -24,7 +28,16 @@ export default function Country(props) {
       getOptionLabel={(option) => option.name}
       style={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Choose A Country" variant="outlined"/>}
-      onChange={(event, value) => props.setCountryCode(value.country_code)}
+      onChange={(event, value) => {
+        if (!value) {
+          props.setCountryCode("CA")
+          
+        } else {
+          props.setCountryCode(value.country_code)
+        }
+        
+        
+      }}
     />
   )
 }

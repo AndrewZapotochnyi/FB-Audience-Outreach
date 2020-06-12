@@ -37,10 +37,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-  const Charts = ({ reachEstimates }) => {
+  const Charts = ({ reachEstimates, setSelectedInterestCategory }) => {
   
   const categoryTypes = ["education_statuses", "income", "life_events", "family_statuses" , "relationship_statuses" , "industries", "interests","behaviors"]
   
+  // console.log("Reach estimates:", reachEstimates);
  
   // let typesRender = function() {
   //   return (<div>
@@ -52,10 +53,14 @@ const useStyles = makeStyles((theme) => ({
 
   const typesRender = categoryTypes.map(type => {
     return (
-      <Button>{type}</Button> )
+      <Button onClick={() => setSelectedInterestCategory(type)}>{type}</Button> )
   })
   ;
   
+  if (reachEstimates[0].data.error) {
+    // console.log(reachEstimates[0].data.error);
+    return (<div>{reachEstimates[0].data.error.message}</div>)
+  }
   
   
 

@@ -7,11 +7,12 @@ require('dotenv').config()
 const token = process.env.REACT_APP_ACCESS_TOKEN;
 const acct = process.env.REACT_APP_ACC_NUM;
 
-let interestsArray = [{"id":"6003584163107","name":"Advertising"},{"id":"6003840140052","name":"Agriculture"},{"id":"6004140335706","name":"Architecture"},{"id":"6002963523717","name":"Aviation"}]
+// let interestsArray = [{"id":"6003840140052","name":"Agriculture"},{"id":"6004140335706","name":"Architecture"},{"id":"6002963523717","name":"Aviation"}]
 
-function getReachEstimate(filterInterest, minAge, maxAge, city) {
+function getReachEstimate(filterInterest, minAge, maxAge, city, interestsArray, selectedInterestCategory ) {
 
-    console.log("Receiving this: ", filterInterest)
+    // console.log("Receiving this: ", filterInterest)
+    console.log("Receiving array of interest", interestsArray)
 
     let reachEstimates = [];
 
@@ -51,7 +52,7 @@ function getReachEstimate(filterInterest, minAge, maxAge, city) {
               ]
           },
           {
-              "interests": [
+              "${selectedInterestCategory}": [
                   {
                       "id": "${interest.id}",
                       "name": "${interest.name}"
@@ -66,6 +67,8 @@ function getReachEstimate(filterInterest, minAge, maxAge, city) {
     //     // console.log(resp.data);
     //     reachEstimates.push(resp.data)
     // });
+
+    
     
 
     requests.push(axiosRequest.then(res => {
