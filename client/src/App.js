@@ -7,10 +7,9 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 import './App.css';
-import Login  from './components/Login';
+import Access  from './components/Access';
 import Profile  from './components/Profile';
 import About from './components/About';
-import SignUp from './components/SignUp';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Saves from "./components/Saves";
@@ -262,38 +261,33 @@ export default function App() {
         <nav className="Nav">
           <div className="Nav-logo-title">
             <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
+          <h1><Link to="/">TheSocialScope</Link></h1>
           </div>
           <div className="Nav-links">
-          <h1><Link to="/home">Audience Research</Link></h1>
           <button className="Nav-button">
-            <Link to="/about">About</Link>
-          </button>
-          <button className="Nav-button">
-            <Link to="/">Landing</Link>
+            <Link to="/home">Filter</Link>
           </button>
           {!loggedIn && 
-            <div>
-              <button className="Nav-button">
-                <Link to="/signup">Sign Up</Link>
-              </button>
-              <button className="Nav-button">
-                <Link to="/login">Login</Link>
-              </button>
-            </div>
+            <button className="Nav-button">
+              <Link to="/access">Access</Link>
+            </button>
           }
           {loggedIn && 
             <div>
+              <button className="Nav-botton">
+                <Link to="/profile">Profile</Link>
+              </button>
               <button className="Nav-button" onClick={() => {
                 localStorage.removeItem("jwt")
                 setLoggedIn(false)
               }}>
-                <Link to="/login">Logout</Link>
-              </button>
-              <button className="Nav-botton">
-                <Link to="/profile">Profile</Link>
+                <Link to="/access">Logout</Link>
               </button>
             </div>
           }
+          <button className="Nav-button">
+            <Link to="/about">About</Link>
+          </button>
           </div> 
         </nav>
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
@@ -318,11 +312,8 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route path="/login">
-            <Login 
+          <Route path="/access">
+            <Access 
             setLoggedIn={setLoggedIn}
             loggedIn={loggedIn}
             />

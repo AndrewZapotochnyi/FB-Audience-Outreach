@@ -3,7 +3,7 @@ import './Links.css'
 import fetch from 'isomorphic-fetch';
 import { Redirect } from 'react-router-dom';
 
-export default function Login(props) {
+export default function Access(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleOnSubmit = (event) => {
