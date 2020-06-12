@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
   const Charts = ({ reachEstimates, setSelectedInterestCategory }) => {
   
-  const categoryTypes = ["education_statuses", "income", "life_events", "family_statuses" , "relationship_statuses" , "industries", "interests","behaviors"]
+  const categoryTypes = ["income", "life_events", "family_statuses" , "industries", "interests", "behaviors"]
   
   // console.log("Reach estimates:", reachEstimates);
  
