@@ -13,6 +13,7 @@ import About from './components/About';
 import SignUp from './components/SignUp';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
+import Saves from "./components/Saves";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 require('dotenv').config()
@@ -34,6 +35,7 @@ export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [listOfInterests, setListOfInterests] = useState({})
   const [selectedInterestCategory, setSelectedInterestCategory ] = useState("income")
+  const [saveObject, setSaveObject] = useState({})
   
   
   useEffect(() => {
@@ -42,10 +44,24 @@ export default function App() {
       setLoggedIn(true);
       }
     }, [])
+
+
+  const onSaveAudience = function() {
+     setSaveObject({
+      "filterInterest": filterInterest,
+      "minAge": minAge,
+      "maxAge": maxAge,
+      "city": city,
+      "selectedInterestCategory": selectedInterestCategory,
+      "reachEstimates": reachEstimates
+    })
+    console.log(saveObject)
+    
+  }
   
   // Submit Form
   const onSubmitInterest = function(input) {
-    // console.log("Interest is set:", input)
+    // console.log("APP JS Interest is set:", input)
     // setSearchText(input);
 
 
@@ -166,41 +182,123 @@ export default function App() {
   }, [])
 
   return (
+    // <Router>
+    //   <div>
+    //     <nav className="Nav">
+    //       <div className="Nav-logo-title">
+    //         <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
+    //         <h1><Link to="/home">Audience Research</Link></h1>
+    //       </div>
+    //       <div className="Nav-links">
+    //         <button className="Nav-button">
+    //           <Link to="/about">About</Link>
+    //         </button>
+    //         {!loggedIn && <div><button className="Nav-button">
+    //           <Link to="/signup">Sign Up</Link>
+    //         </button>
+    //         <button className="Nav-button">
+    //         <Link to="/login">Login</Link>
+    //       </button>
+    //       </div>
+    //       }
+    //       {loggedIn && <div>
+    //         <button className="Nav-button" onClick={() => {
+    //           localStorage.removeItem("jwt")
+    //           setLoggedIn(false)
+    //         }
+    //         }>Logout</button>
+    //         <button className="Nav-botton">
+    //         <Link to="/profile">Profile</Link>
+    //         </button>
+    //       </div>
+    //       }
+    //       </div> 
+    //     </nav>
+    //     {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
+    //     <Switch>
+    //       <Route path="/home">
+    //         <Filter 
+    //           name={firstInterest.name} 
+    //           onSubmitInterest={onSubmitInterest} 
+    //           setMinAge={setMinAge} 
+    //           setMaxAge={setMaxAge} 
+    //           setCountryCode={setCountryCode} 
+    //           countryCode={countryCode} 
+    //           setCities={setCities} 
+    //           cities={cities} 
+    //           city={city} 
+    //           setCity={setCity}
+    //           city={city}/>
+    //         {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+            
+    //       </Route>
+    //       {/* <Route path="/home">
+    //         <Home />
+    //       </Route> */}
+    //       <Route path="/about">
+    //         {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+    //         <About />
+    //       </Route>
+    //       <Route path="/signup">
+    //         <SignUp />
+    //       </Route>
+    //       <Route path="/login">
+    //         <Login 
+    //         setLoggedIn={setLoggedIn}
+    //         loggedIn={loggedIn}
+    //         />
+    //       </Route>
+    //       <Route path="/profile">
+    //         <Profile/>
+    //       </Route>
+    //     </Switch>
+    //   </div>
+    // </Router>
+
+    //////////////////////////////// NEW ROUTER ////////////////////////////////////////////
+
     <Router>
       <div>
         <nav className="Nav">
           <div className="Nav-logo-title">
             <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
-            <h1><Link to="/home">Audience Research</Link></h1>
           </div>
           <div className="Nav-links">
-            <button className="Nav-button">
-              <Link to="/about">About</Link>
-            </button>
-            {!loggedIn && <div><button className="Nav-button">
-              <Link to="/signup">Sign Up</Link>
-            </button>
-            <button className="Nav-button">
-            <Link to="/login">Login</Link>
+          <h1><Link to="/home">Audience Research</Link></h1>
+          <button className="Nav-button">
+            <Link to="/about">About</Link>
           </button>
-          </div>
+          <button className="Nav-button">
+            <Link to="/">Landing</Link>
+          </button>
+          {!loggedIn && 
+            <div>
+              <button className="Nav-button">
+                <Link to="/signup">Sign Up</Link>
+              </button>
+              <button className="Nav-button">
+                <Link to="/login">Login</Link>
+              </button>
+            </div>
           }
-          {loggedIn && <div>
-            <button className="Nav-button" onClick={() => {
-              localStorage.removeItem("jwt")
-              setLoggedIn(false)
-            }
-            }>Logout</button>
-            <button className="Nav-botton">
-            <Link to="/profile">Profile</Link>
-            </button>
-          </div>
+          {loggedIn && 
+            <div>
+              <button className="Nav-button" onClick={() => {
+                localStorage.removeItem("jwt")
+                setLoggedIn(false)
+              }}>
+                <Link to="/login">Logout</Link>
+              </button>
+              <button className="Nav-botton">
+                <Link to="/profile">Profile</Link>
+              </button>
+            </div>
           }
           </div> 
         </nav>
         {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         <Switch>
-          <Route path="/home">
+        <Route path="/home">
             <Filter 
               name={firstInterest.name} 
               onSubmitInterest={onSubmitInterest} 
@@ -212,13 +310,11 @@ export default function App() {
               cities={cities} 
               city={city} 
               setCity={setCity}
-              city={city}/>
-            {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest}/>}
-            
+              city={city}
+              loggedIn={loggedIn}
+              /> 
+            {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
           </Route>
-          {/* <Route path="/home">
-            <Home />
-          </Route> */}
           <Route path="/about">
             <About />
           </Route>
@@ -232,10 +328,17 @@ export default function App() {
             />
           </Route>
           <Route path="/profile">
-            <Profile/>
+            <Profile>
+            </Profile>
+            {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+
           </Route>
         </Switch>
       </div>
     </Router>
+
+
+
+
   );
 }

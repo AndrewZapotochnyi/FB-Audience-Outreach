@@ -14,7 +14,7 @@ export default function City(props) {
   const [ error, setError ] = useState(false)
 
   useEffect (() => {
-    axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${searchText}&country_code=${country_code}&type=adgeolocation&access_token=${access_token}`)
+    axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${searchText}&country_code=${country_code}&type=adgeolocation&access_token=EAABsbCS1iHgBABiggGy6bzJuUpMdCoZAkc3c1pOCdhTMZBGZA7q3mf54Q0EJfoLoywvNPSVDTrYjEf1OOc38jEWietokHb8UVJvJmT91iu0eZCXJUZAX51d66aehVV5qXiIVhPxJOKkpHpT4ZBwUnMr3KjmFZBZB77QZCXAx5ZAtfwqgZDZD`)
     .then(res => {
       props.setCities(res.data.data);
     })

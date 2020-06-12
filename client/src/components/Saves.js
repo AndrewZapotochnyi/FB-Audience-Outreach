@@ -37,39 +37,21 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-  const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest, onSaveAudience }) => {
+  const Saves = ({ saveObject }) => {
   
-  const categoryTypes = ["income", "life_events", "family_statuses" , "industries", "interests", "behaviors"]
-  
-  // console.log("Reach estimates:", reachEstimates);
- 
-  // let typesRender = function() {
-  //   return (<div>
-  //     {categoryTypes.map((type, index) => (
-  //         <Button>{type}</Button>
-  //     ))}
-  //     </div>);    
-  // }
-
-  const typesRender = categoryTypes.map(type => {
-    return (
-      <Button onClick={() => {
-        // filterInterest={filterInterest} onSubmitInterest={onSubmitInterest}
-        setSelectedInterestCategory(type)
-        // onSubmitInterest(filterInterest.name)
-      }}>{type}</Button> )
-  })
-  ;
-  
-  if (reachEstimates[0].data.error) {
-    // console.log(reachEstimates[0].data.error);
-    return (<div>{reachEstimates[0].data.error.message}</div>)
+  if (!saveObject) {
+    return <div>No saved interests!</div>
   }
+
+  
+  console.log("Here is the saved object in state: ", saveObject )
+
+  
   
   
 
   const defaultChartsData = {
-    labels: reachEstimates ? reachEstimates.map(item => item.interest_name) : [],
+    labels: saveObject ? saveObject.reachEstimates.map(item => item.interest_name) : [],
     datasets: [
       {
         label: 'Audience Results',
@@ -78,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: reachEstimates ? reachEstimates.map(item => item.data.data.users) : []
+        data: saveObject ? saveObject.reachEstimates.map(item => item.data.data.users) : []
       }
     ]
   };
@@ -87,13 +69,11 @@ const useStyles = makeStyles((theme) => ({
 
     return (
       <ul>
-        <div>
-          <ButtonGroup color="primary" aria-label="outlined primary button group">
-            {typesRender}
-          </ButtonGroup>
-        </div>
-
-        <button onClick={() => onSaveAudience()}> Save Search </button>
+        <div>You've searched: </div>
+        <div>City: {saveObject.city.name}</div>
+        <div>Search interest: {saveObject.filterInterest.name}</div>
+        <div>Max Age: {saveObject.maxAge}</div>
+        <div>Min Age: {saveObject.maxAge}</div>
 
         {/* {chartsRender} */}
         <HorizontalBar
@@ -109,4 +89,4 @@ const useStyles = makeStyles((theme) => ({
     );
 }
 
-export default Charts;
+export default Saves;
