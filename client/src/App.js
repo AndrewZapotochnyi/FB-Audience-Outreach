@@ -74,6 +74,9 @@ export default function App() {
 
   }
 
+
+    
+
     // useEffect(() => {
     //   axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
     //   .then(res => {
@@ -98,6 +101,11 @@ export default function App() {
   
 
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
+
+
+  useEffect(() => {
+    onSubmitInterest(filterInterest.name)
+    }, [selectedInterestCategory])
 
   ////////////////////// INTERESTS MANAGEMENT //////////////////////////////
 
@@ -201,7 +209,7 @@ export default function App() {
               city={city} 
               setCity={setCity}
               city={city}/>
-            {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory}/>}
+            {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest}/>}
             
           </Route>
           {/* <Route path="/home">

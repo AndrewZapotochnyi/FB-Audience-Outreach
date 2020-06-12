@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-  const Charts = ({ reachEstimates, setSelectedInterestCategory }) => {
+  const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest }) => {
   
   const categoryTypes = ["income", "life_events", "family_statuses" , "industries", "interests", "behaviors"]
   
@@ -53,7 +53,11 @@ const useStyles = makeStyles((theme) => ({
 
   const typesRender = categoryTypes.map(type => {
     return (
-      <Button onClick={() => setSelectedInterestCategory(type)}>{type}</Button> )
+      <Button onClick={() => {
+        // filterInterest={filterInterest} onSubmitInterest={onSubmitInterest}
+        setSelectedInterestCategory(type)
+        // onSubmitInterest(filterInterest.name)
+      }}>{type}</Button> )
   })
   ;
   
