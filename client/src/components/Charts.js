@@ -92,11 +92,11 @@ const useStyles = makeStyles((theme) => ({
         <button onClick={() => onSaveAudience()}> Save Search </button>
 
         {/* {chartsRender} */}
-        <div>
+        <div className="Chart">
           <HorizontalBar
             data={defaultChartsData}
-            width={100}
-            height={250}
+            width={800}
+            height={500}
             options={{
               maintainAspectRatio: false
             }}
