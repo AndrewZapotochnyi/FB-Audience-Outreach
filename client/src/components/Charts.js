@@ -58,35 +58,31 @@ const useStyles = makeStyles((theme) => ({
         setSelectedInterestCategory(type)
         // onSubmitInterest(filterInterest.name)
       }}>{type}</Button> )
-  })
-  ;
+    });
   
-  if (reachEstimates[0].data.error) {
-    // console.log(reachEstimates[0].data.error);
-    return (<div>{reachEstimates[0].data.error.message}</div>)
-  }
+    if (reachEstimates[0].data.error) {
+      return (<div>{reachEstimates[0].data.error.message}</div>)
+    }
   
-  
+    const defaultChartsData = {
+      labels: reachEstimates ? reachEstimates.map(item => item.interest_name) : [],
+      datasets: [
+        {
+          label: 'Audience Results',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: reachEstimates ? reachEstimates.map(item => item.data.data.users) : []
+        }
+      ]
+    };
 
-  const defaultChartsData = {
-    labels: reachEstimates ? reachEstimates.map(item => item.interest_name) : [],
-    datasets: [
-      {
-        label: 'Audience Results',
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
-        data: reachEstimates ? reachEstimates.map(item => item.data.data.users) : []
-      }
-    ]
-  };
-
-  console.log("Charts data: ", defaultChartsData);
+    console.log("Charts data: ", defaultChartsData);
 
     return (
-      <ul>
+      <div className="Charts-section">
         <div>
           <ButtonGroup color="primary" aria-label="outlined primary button group">
             {typesRender}
@@ -96,17 +92,18 @@ const useStyles = makeStyles((theme) => ({
         <button onClick={() => onSaveAudience()}> Save Search </button>
 
         {/* {chartsRender} */}
-        <HorizontalBar
-          data={defaultChartsData}
-          width={100}
-          height={250}
-          options={{
-            maintainAspectRatio: false
-          }}
-        />
-      </ul>
-
+        <div>
+          <HorizontalBar
+            data={defaultChartsData}
+            width={100}
+            height={250}
+            options={{
+              maintainAspectRatio: false
+            }}
+          />
+        </div>
+      </div>
     );
-}
+  }
 
 export default Charts;

@@ -1,5 +1,7 @@
 .Page {
   font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 .Page .Nav-functionality {
   display: flex;
@@ -94,6 +96,12 @@
   font-size: 17px;
   font-weight: bold;
   color: white;
+}
+.Page .Filter-Charts .Charts-section {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */
