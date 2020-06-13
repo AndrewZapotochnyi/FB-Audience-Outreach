@@ -19,7 +19,7 @@ require('dotenv').config()
 const token = process.env.REACT_APP_ACCESS_TOKEN
 export default function App() {
 
-  
+
   ///////////////////// FILTER FUNCTIONALITY /////////////////////////
   // Interest State
   const [firstInterest, setFirstInterest] = useState({name: "*interest*"})
@@ -260,58 +260,66 @@ export default function App() {
     //////////////////////////////// NEW ROUTER ////////////////////////////////////////////
 
     <Router>
-      <div>
-        <nav className="Nav">
-          <div className="Nav-logo-title">
-            <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
-          <h1><Link to="/">TheSocialScope</Link></h1>
-          </div>
-          <div className="Nav-links">
-          <button className="Nav-button">
-            <Link to="/home">Filter</Link>
-          </button>
-          {!loggedIn && 
-            <button className="Nav-button">
-              <Link to="/access">Access</Link>
-            </button>
-          }
-          {loggedIn && 
-            <div>
-              <button className="Nav-botton">
-                <Link to="/profile">Profile</Link>
-              </button>
-              <button className="Nav-button" onClick={() => {
-                localStorage.removeItem("jwt")
-                setLoggedIn(false)
-              }}>
-                <Link to="/access">Logout</Link>
-              </button>
+      <div className="Page">
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        </style>
+        <div className="Nav-functionality">
+          <nav className="Nav">
+            <div className="Nav-logo-title">
+              {/* <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img> */}
+              <h1><Link className="Nav-title" to="/">TheSocialScope</Link></h1>
             </div>
-          }
-          <button className="Nav-button">
-            <Link to="/about">About</Link>
-          </button>
-          </div> 
-        </nav>
-        {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
+            <div className="Nav-links">
+            <button className="Nav-button-background">
+              <Link className="Nav-button" to="/home">Filter</Link>
+            </button>
+            {/* <button className="Nav-button-background">
+              <Link className="Nav-button" to="/about">About</Link>
+            </button> */}
+            {!loggedIn && 
+              <button className="Nav-button-background">
+                <Link className="Nav-button" to="/access">Access</Link>
+              </button>
+            }
+            {loggedIn && 
+              <>
+                <button className="Nav-button-background">
+                  <Link className="Nav-button" to="/profile">Profile</Link>
+                </button>
+                <button className="Nav-button-background" onClick={() => {
+                  localStorage.removeItem("jwt")
+                  setLoggedIn(false)
+                }}>
+                  <Link className="Nav-button" to="/access">Logout</Link>
+                </button>
+              </>
+            }
+            </div> 
+          </nav>
+          {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
+        </div>
         <Switch>
-        <Route path="/home">
-            <Filter 
-              name={firstInterest.name} 
-              onSubmitInterest={onSubmitInterest} 
-              setMinAge={setMinAge} 
-              setMaxAge={setMaxAge} 
-              setCountryCode={setCountryCode} 
-              countryCode={countryCode} 
-              setCities={setCities} 
-              cities={cities} 
-              city={city} 
-              setCity={setCity}
-              city={city}
-              loggedIn={loggedIn}
-              /> 
-            {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
-          </Route>
+          <div class ="Filter-Charts">
+            <Route path="/home">
+              <Filter
+                name={firstInterest.name} 
+                onSubmitInterest={onSubmitInterest} 
+                setMinAge={setMinAge} 
+                setMaxAge={setMaxAge} 
+                setCountryCode={setCountryCode} 
+                countryCode={countryCode} 
+                setCities={setCities} 
+                cities={cities} 
+                city={city} 
+                setCity={setCity}
+                city={city}
+                loggedIn={loggedIn}
+                /> 
+              {reachEstimates.length && 
+              <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+            </Route>
+          </div>
           <Route path="/about">
             <About />
           </Route>
@@ -325,14 +333,9 @@ export default function App() {
             <Profile>
             </Profile>
             {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
-
           </Route>
         </Switch>
       </div>
     </Router>
-
-
-
-
   );
 }

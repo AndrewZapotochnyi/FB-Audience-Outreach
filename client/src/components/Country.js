@@ -21,22 +21,23 @@ export default function Country(props) {
   // }
 
   return (
-    <Autocomplete
-      id="country-dropdown"
-      options={countries}
-      getOptionLabel={option => option.name}
-      style={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Choose A Country" variant="outlined"/>}
-      onChange={(event, value) => {
-        if (!value) {
-          props.setCountryCode("CA")
-          
-        } else {
-          props.setCountryCode(value.country_code)
-        }
-        
-        
-      }}
-    />
+    <div className="Autocomplete">
+      <Autocomplete
+        id="country-dropdown"
+        options={countries}
+        getOptionLabel={option => option.name}
+        style={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label="Choose A Country" variant="outlined"/>}
+        onChange={(event, value) => {
+          if (!value) {
+            props.setCountryCode("CA") 
+          } else {
+            props.setCountryCode(value.country_code)
+          }
+        }}
+      />
+    </div>
+
+   
   )
 }

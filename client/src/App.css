@@ -1,3 +1,99 @@
-
+.Page {
+  font-family: "Roboto", sans-serif;
+}
+.Page .Nav-functionality {
+  display: flex;
+}
+.Page .Nav-functionality .Nav {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  color: white;
+}
+.Page .Nav-functionality .Nav-logo-title {
+  display: flex;
+  align-items: center;
+}
+.Page .Nav-functionality .Nav-logo-title .Nav-title {
+  padding-left: 30px;
+  text-decoration: none;
+  color: white;
+  align-items: center;
+}
+.Page .Nav-functionality .Nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 30px;
+}
+.Page .Nav-functionality .Nav-links .Nav-button-background {
+  background-color: black;
+  border: none;
+  height: 50px;
+  padding: 0px;
+  outline: none;
+}
+.Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button {
+  color: white;
+  text-decoration: none;
+  padding: 0px;
+  margin: 10px;
+  border: none;
+}
+.Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:hover, .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:active {
+  border-bottom: solid;
+  outline: white;
+}
+.Page .Filter-Charts {
+  display: flex;
+}
+.Page .Filter-Charts .Filter {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 20px;
+}
+.Page .Filter-Charts .Filter .Filter-header {
+  margin-left: 10px;
+}
+.Page .Filter-Charts .Filter .Autocomplete {
+  display: flex;
+  margin: 10px;
+}
+.Page .Filter-Charts .Filter .Age {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.Page .Filter-Charts .Filter .Age-title {
+  display: flex;
+  align-items: center;
+  color: #767676;
+}
+.Page .Filter-Charts .Filter .Age-box {
+  width: 53px;
+  height: 56px;
+  border-radius: 3px;
+  color: #767676;
+  border-color: #c3c3c3;
+  font-size: 17px;
+}
+.Page .Filter-Charts .Filter .Search-button {
+  margin: 10px;
+  width: 280px;
+  height: 56px;
+  background-color: #18A493;
+  letter-spacing: 0.00938em;
+  border-radius: 3px;
+  border-color: #18A493;
+  border: solid;
+  border-width: 0px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
 
 /*# sourceMappingURL=App.css.map */
