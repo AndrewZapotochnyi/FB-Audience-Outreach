@@ -22,14 +22,16 @@ export default function City(props) {
   }, [searchText, country_code])
 
   return (
-    <Autocomplete
-      id="city-dropdown"
-      options={props.cities}
-      getOptionLabel={(option) => option.name}
-      style={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="City Dropdown" variant="outlined"/>}
-      onChange={(event, value) => props.setCity(value)}
-      onInputChange={(event, value) => setSearchText(value)}
-    />
+    <div className="Autocomplete">
+      <Autocomplete
+        id="city-dropdown"
+        options={props.cities}
+        getOptionLabel={(option) => option.name}
+        style={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label="City Dropdown" variant="outlined"/>}
+        onChange={(event, value) => props.setCity(value)}
+        onInputChange={(event, value) => setSearchText(value)}
+      />
+    </div>
   )
 }

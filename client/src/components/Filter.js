@@ -24,13 +24,13 @@ export default function Filter(props) {
   };
 
   return (
-    <div className="filter">
-    <h1>Filter</h1>
+    <div className="Filter">
+    <h1 className="Filter Filter-header">Filter</h1>
 
       <Country setCountryCode={props.setCountryCode} countryCode={props.countryCode}/>
       <City countryCode={props.countryCode} setCities={props.setCities} cities={props.cities} city={props.city} setCity={props.setCity} />
       <Age setMinAge={props.setMinAge} setMaxAge={props.setMaxAge}/>
-      <section className="search" >
+      <section className="search">
         {/* <input
           placeholder={interest}
           onChange={event => setInterest(event.target.value)}
@@ -41,26 +41,20 @@ export default function Filter(props) {
         <Interest setInterest={setInterest}/>
 
         { props.city === null &&
-          <div>
+          <div className="Search-button">
           <button type="button" value="Submit" onClick={() => {
             // onSubmit(interest)
           }
-        } >Click me!</button>
+        }>Search</button>
           <div>Choose city first! </div>
         </div>
         }
         
-        { props.city && <button type="button" value="Submit" onClick={() => {
+        { props.city && <button className="Search-button" type="button" value="Submit" onClick={() => {
             onSubmit(interest)
         }
-        } >Click me!</button>}
-
-
-
-
+        }>Search</button>}
     </section>
   </div>
-
-
   )
 }

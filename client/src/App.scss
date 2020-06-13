@@ -1,0 +1,123 @@
+.Page {
+  font-family: 'Roboto', sans-serif;
+
+  .Nav-functionality{ 
+    display: flex;
+  
+    .Nav {
+      background-color: black;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 80px;
+      color: white
+    }
+  
+    .Nav-logo-title {
+      display: flex;
+      align-items: center;
+  
+      .Nav-title {
+        padding-left: 30px;
+        text-decoration: none;
+        color: white;
+        align-items: center;
+      }
+  
+    }
+  
+    .Nav-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-right: 30px;
+  
+      .Nav-button-background {
+        background-color: black;
+        border: none;
+        height: 50px;
+        padding: 0px;
+        outline: none;
+  
+        .Nav-button {
+          color: white;
+          text-decoration: none;
+          padding: 0px;
+          margin: 10px;
+          border: none;
+        }
+        
+        .Nav-button:hover, .Nav-button:active {
+          border-bottom: solid;
+          outline: white;
+        }
+      }
+    } 
+  }
+  
+  .Filter-Charts {
+    display: flex;
+
+    .Filter {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin-left: 20px;
+
+      .Filter-header {
+        margin-left: 10px;
+      }
+
+      .Autocomplete{
+        display: flex;
+        margin: 10px;
+      }
+
+      .Age {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+      }
+
+      .Age-title {
+        display: flex;
+        align-items: center;
+        color: rgb(118, 118, 118);
+      }
+
+      .Age-box {
+        width: 53px;
+        height: 56px;
+        border-radius: 3px;
+        color: rgb(118, 118, 118);
+        border-color: rgb(195, 195, 195);
+        font-size: 17px;
+      }
+
+      .Search-button{ 
+        margin:10px;
+        width: 280px;
+        height: 56px;
+        background-color: #18A493;
+        letter-spacing: 0.00938em;
+        border-radius: 3px;
+        border-color: #18A493;
+        border: solid;
+        border-width: 0px;
+        font-size: 17px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
