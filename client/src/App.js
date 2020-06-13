@@ -55,9 +55,10 @@ export default function App() {
       "selectedInterestCategory": selectedInterestCategory,
       "reachEstimates": reachEstimates
     } 
+    let params2 = {saved_interest: "Montreal"}
     setSaveObject(params)
     console.log("params", params)
-    axios.post('/saved_interests', params)
+    axios.post('/saved_interests', params2)
   }
   
   // Submit Form

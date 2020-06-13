@@ -1,5 +1,5 @@
 class SavedInterestsController < ApplicationController
-  before_action :set_saved_interest, only: [:show, :update, :destroy]
+  # before_action :set_saved_interest, only: [:show, :update, :destroy]
 
   # GET /saved_interests
   def index
@@ -16,7 +16,7 @@ class SavedInterestsController < ApplicationController
   # POST /saved_interests
   def create
     @saved_interest = SavedInterest.new(saved_interest_params)
-
+    @saved_interest.save!
     if @saved_interest.save
       render json: @saved_interest, status: :created, location: @saved_interest
     else
