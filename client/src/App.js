@@ -46,16 +46,18 @@ export default function App() {
 
 
   const onSaveAudience = function() {
-     setSaveObject({
+    let params =
+    {
       "filterInterest": filterInterest,
       "minAge": minAge,
       "maxAge": maxAge,
       "city": city,
       "selectedInterestCategory": selectedInterestCategory,
       "reachEstimates": reachEstimates
-    })
-    console.log(saveObject)
-    
+    } 
+    setSaveObject(params)
+    console.log("params", params)
+    axios.post('/saved_interests', params)
   }
   
   // Submit Form

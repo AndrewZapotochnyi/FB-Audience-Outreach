@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :saved_interests
   resources :countries
   resources :interests
   scope '/api' do

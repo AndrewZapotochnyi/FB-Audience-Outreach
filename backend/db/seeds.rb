@@ -37,7 +37,7 @@ user1.save
 
 ########### INTEREST SEEDS ##########################################
 
-
+SavedInterest.destroy_all
 
 ########### INTEREST SEEDS ##########################################
 

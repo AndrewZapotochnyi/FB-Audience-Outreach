@@ -1,0 +1,2 @@
+class SavedInterest < ApplicationRecord
+end
