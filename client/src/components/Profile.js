@@ -2,8 +2,9 @@ import React from 'react';
 
 export default function Profile() {
   return (
-    <>
-      <h1>Profile</h1>
-    </>
+    <div className="Profile-page">
+      <h1 className="Profile-header">Geralt of Rivia</h1>
+      <h2 className="Profile-username">@geraltofrivia</h2>
+    </div>
   )
 }

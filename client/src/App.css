@@ -176,5 +176,20 @@ body .Access-page .Access-form .Login-button {
   font-weight: bold;
   color: white;
 }
+body .Profile-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 60px;
+  width: 100%;
+}
+body .Profile-page .Profile-header, body .Profile-page .Profile-username {
+  display: flex;
+  align-self: center;
+  width: 300px;
+}
+body .Profile-page .Profile-header {
+  margin: 0px;
+}
 
 /*# sourceMappingURL=App.css.map */

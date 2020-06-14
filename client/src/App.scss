@@ -234,7 +234,22 @@ body {
       }
     }
   }
-  
+  .Profile-page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 100%;
+    .Profile-header, .Profile-username{
+      display: flex;
+      align-self: center;
+      width: 300px;
+      
+    }
+    .Profile-header{
+      margin:0px
+    }
+  }
 }
 
 
