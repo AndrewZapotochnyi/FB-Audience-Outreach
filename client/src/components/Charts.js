@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
           </ButtonGroup>
         </div>
 
-        {/* <button onClick={() => onSaveAudience()}> Save Search </button> */}
+        <button onClick={() => onSaveAudience()}> Save Search </button>
 
         {/* {chartsRender} */}
         <div className="Chart">

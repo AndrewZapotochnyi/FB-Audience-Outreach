@@ -42,29 +42,60 @@ body {
         flex-direction: row;
         align-items: center;
         padding-right: 30px;
+
+        .Nav-button-background:hover {
+          color: #1ECAAE;
+          border-bottom-color: #1ECAAE;
+          border-bottom-width: 5px;
+          border-bottom-style: solid;
+          
+        }
+        
     
         .Nav-button-background {
           background-color: black;
           border: none;
-          height: 50px;
+          height: 80px;
           padding: 0px;
           outline: none;
+
+          
+          
+          
     
           .Nav-button {
             color: white;
             text-decoration: none;
             padding: 0px;
-            margin: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
             border: none;
+            height: 80px;
+            
           }
+
+
           
           .Nav-button:hover, .Nav-button:active {
-            border-bottom: solid;
-            outline: white;
+            // border-bottom: solid;
+            // outline: white;
+            // height: 80px;
+            // border-bottom-width: medium;
+            // border-color: white;
+            // border-style: solid;
+            
+            height: 80px;
+            // border-bottom-width: medium;
+            // border-bottom: solid;
+            // border-bottom-color: white;
           }
+
+          
         }
       } 
     }
+
+    
     
     .Filter-Charts {
       display: flex;
