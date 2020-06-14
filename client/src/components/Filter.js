@@ -49,7 +49,6 @@ export default function Filter(props) {
           <div>Choose city first! </div>
         </div>
         }
-        
         { props.city && <button className="Search-button" type="button" value="Submit" onClick={() => {
             onSubmit(interest)
         }
