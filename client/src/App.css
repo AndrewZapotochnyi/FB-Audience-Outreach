@@ -25,10 +25,11 @@ body .Page .Nav-functionality .Nav-logo-title {
   align-items: center;
 }
 body .Page .Nav-functionality .Nav-logo-title .Nav-title {
-  padding-left: 30px;
   text-decoration: none;
   color: white;
   align-items: center;
+  margin-left: 30px;
+  padding-bottom: 20px;
 }
 body .Page .Nav-functionality .Nav-links {
   display: flex;
@@ -57,6 +58,7 @@ body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button {
   margin-right: 20px;
   border: none;
   height: 80px;
+  padding-bottom: 20px;
 }
 body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:hover, body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:active {
   height: 80px;
@@ -133,24 +135,42 @@ body .Page .Filter-Charts .Chart {
 body .Page .Filter-Charts .category-buttons {
   margin-bottom: 20px;
 }
-body .Access-page {
+body .Page .Filter-Charts .Error {
+  color: black;
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  background-color: pink;
+  height: 53px;
+  border-radius: 3px;
+  padding: 13px;
+}
+body .Page .Access-page {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
   width: 100%;
+  background-color: #F6F8FA;
+  padding-top: 60px;
+  min-height: calc(100vh - 80px);
 }
-body .Access-page .Access-header {
+body .Page .Access-page .Access-header {
   display: flex;
   margin-bottom: 10px;
   align-self: center;
   width: 100px;
 }
-body .Access-page .Access-form {
+body .Page .Access-page .Access-form {
   width: 280px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 0px 5px 5px #E9EBEC;
+  padding: 20px;
+  padding-bottom: 40px;
+  border-radius: 3px;
+  background-color: white;
+  height: 320px;
 }
-body .Access-page .Access-form .Access-field {
+body .Page .Access-page .Access-form .Access-field {
   height: 56px;
   border-style: solid;
   border-width: thin;
@@ -161,7 +181,7 @@ body .Access-page .Access-form .Access-field {
   padding-left: 10px;
   margin: 10px;
 }
-body .Access-page .Access-form .Login-button {
+body .Page .Access-page .Access-form .Login-button {
   width: 260px;
   height: 56px;
   margin-left: 10px;
@@ -176,20 +196,40 @@ body .Access-page .Access-form .Login-button {
   font-weight: bold;
   color: white;
 }
-body .Profile-page {
+body .Page .Profile-save {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  margin-top: 60px;
-  width: 100%;
+  align-items: center;
 }
-body .Profile-page .Profile-header, body .Profile-page .Profile-username {
+body .Page .Profile-save .Profile-page {
+  display: flex;
+  flex-direction: column;
+  margin: 60px;
+  margin-bottom: 50px;
+}
+body .Page .Profile-save .Profile-page .Profile-header, body .Page .Profile-save .Profile-page .Profile-username {
   display: flex;
   align-self: center;
-  width: 300px;
 }
-body .Profile-page .Profile-header {
-  margin: 0px;
+body .Page .Profile-save .Profile-page .Profile-header {
+  margin-bottom: 15px;
+}
+body .Page .Profile-save .Saved-data {
+  display: flex;
+  background-color: lightgrey;
+  flex-direction: column;
+  align-items: center;
+  width: calc(80% - 200px);
+  padding: 1em;
+}
+body .Page .Profile-save .Saved-data .Saved-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 30px;
+}
+body .Page .Profile-save .Saved-data .Saved-info-label {
+  margin: 1px;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -271,9 +271,6 @@ export default function App() {
               <h1><Link className="Nav-title" to="/">TheSocialScope</Link></h1>
             </div>
             <div className="Nav-links">
-            <button className="Nav-button-background">
-              <Link className="Nav-button" to="/home">Filter</Link>
-            </button>
             {/* <button className="Nav-button-background">
               <Link className="Nav-button" to="/about">About</Link>
             </button> */}
@@ -284,6 +281,9 @@ export default function App() {
             }
             {loggedIn && 
               <>
+                <button className="Nav-button-background">
+                  <Link className="Nav-button" to="/home">Filter</Link>
+                </button>
                 <button className="Nav-button-background">
                   <Link className="Nav-button" to="/profile">Profile</Link>
                 </button>
@@ -336,9 +336,11 @@ export default function App() {
             />
           </Route>
           <Route path="/profile">
-            <Profile>
-            </Profile>
-            {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+            <div className="Profile-save">
+              <Profile>
+              </Profile>
+              {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+            </div> 
           </Route>
         </Switch>
       </div>

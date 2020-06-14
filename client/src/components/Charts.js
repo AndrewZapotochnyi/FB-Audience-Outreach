@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import {HorizontalBar} from 'react-chartjs-2';
 
-
-// width={800}
-// height={500}
-
 // const defaultChartsData = {
 //   labels: [],
 //   datasets: [
@@ -42,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
   const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest, onSaveAudience }) => {
   
-  const categoryTypes = ["family_statuses" , "industries", "interests", "behaviors", "income"]
+  const categoryTypes = ["income", "life_events", "family_statuses" , "industries", "interests", "behaviors"]
   
   // console.log("Reach estimates:", reachEstimates);
  
@@ -87,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     return (
       <div className="Charts-section">
         <div>
-          <ButtonGroup className="category-buttons" color="primary" aria-label="outlined primary button group">
+          <ButtonGroup color="primary" aria-label="outlined primary button group">
             {typesRender}
           </ButtonGroup>
         </div>
@@ -95,10 +91,11 @@ const useStyles = makeStyles((theme) => ({
         <button onClick={() => onSaveAudience()}> Save Search </button>
 
         {/* {chartsRender} */}
-        <div className="Chart">
+        <div className="Charts">
           <HorizontalBar
             data={defaultChartsData}
-  
+            width={800}
+            height={500}
             options={{
               maintainAspectRatio: false
             }}

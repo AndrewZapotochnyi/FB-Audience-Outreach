@@ -33,22 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-
-
   const Saves = ({ saveObject }) => {
   
   if (!saveObject) {
     return <div>No saved interests!</div>
   }
-
   
   console.log("Here is the saved object in state: ", saveObject )
-
-  
-  
-  
 
   const defaultChartsData = {
     labels: saveObject ? saveObject.reachEstimates.map(item => item.interest_name) : [],
@@ -66,27 +57,29 @@ const useStyles = makeStyles((theme) => ({
   };
 
   console.log("Charts data: ", defaultChartsData);
+  console.log(saveObject.selectedInterestCategory)
 
-    return (
-      <ul>
-        <div>You've searched: </div>
-        <div>City: {saveObject.city.name}</div>
-        <div>Search interest: {saveObject.filterInterest.name}</div>
-        <div>Max Age: {saveObject.maxAge}</div>
-        <div>Min Age: {saveObject.maxAge}</div>
-
-        {/* {chartsRender} */}
-        <HorizontalBar
-          data={defaultChartsData}
-          width={100}
-          height={250}
-          options={{
-            maintainAspectRatio: false
-          }}
-        />
-      </ul>
-
-    );
+  const removeUnderscore = function(interestCategory) {
+    return interestCategory.replace("_", " ")
+  };
+  
+  return (
+    <div className="Saved-data">
+      <div className="Saved-info">
+        <label className="Saved-info-label">Latest Saved Search:</label>
+        <span>Results for individuals in {removeUnderscore(saveObject.selectedInterestCategory)} demographic living in {saveObject.city.name}, between the ages of {saveObject.minAge} and {saveObject.maxAge}, and interested in {saveObject.filterInterest.name}.</span>
+      </div>
+      {/* {chartsRender} */}
+      <HorizontalBar
+        data={defaultChartsData}
+        width={100}
+        height={250}
+        options={{
+          maintainAspectRatio: false
+        }}
+      />
+    </div>
+  );
 }
 
 export default Saves;

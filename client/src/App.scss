@@ -28,10 +28,11 @@ body {
         align-items: center;
     
         .Nav-title {
-          padding-left: 30px;
           text-decoration: none;
           color: white;
           align-items: center;
+          margin-left: 30px;
+          padding-bottom: 20px;
         }
     
       }
@@ -49,7 +50,6 @@ body {
           border-bottom-style: solid;
           
         }
-        
     
         .Nav-button-background {
           background-color: black;
@@ -57,10 +57,6 @@ body {
           height: 80px;
           padding: 0px;
           outline: none;
-
-          
-          
-          
     
           .Nav-button {
             color: white;
@@ -70,11 +66,9 @@ body {
             margin-right: 20px;
             border: none;
             height: 80px;
-            
+            padding-bottom: 20px;
           }
 
-
-          
           .Nav-button:hover, .Nav-button:active {
             // border-bottom: solid;
             // outline: white;
@@ -140,7 +134,7 @@ body {
           align-items: center;
           color: rgb(118, 118, 118);
         }
-
+         
         .Age-box {
           width: 53px;
           height: 56px;
@@ -188,66 +182,113 @@ body {
       .category-buttons{
         margin-bottom: 20px;
       }
+
+      .Error {
+        color: black;
+        display: flex;
+        align-items: center;
+        margin: 50px;
+        background-color: pink;
+        height: 53px;
+        border-radius: 3px;
+        padding: 13px;
+      }
     }
 
-  }
-  .Access-page{
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-    width: 100%;
-    .Access-header{
+    .Access-page{
       display: flex;
-      margin-bottom: 10px;
-      align-self: center;
-      width: 100px;
-    }
-    .Access-form{
-      width:280px;
-      display:flex;
-      flex-direction: column;
-      .Access-field{
-          height: 56px;
-          border-style: solid;
-          border-width: thin;
-          border-radius: 3px;
-          color: rgb(118, 118, 118);
-          border-color: rgb(195, 195, 195);
-          font-size: 17px;
-          padding-left:10px;
-          margin:10px;
-      }
-      .Login-button{
-          width: 260px;
-          height: 56px;
-          margin-left: 10px;
-          margin-top:10px;
-          background-color: #18A493;
-          letter-spacing: 0.00938em;
-          border-radius: 3px;
-          border-color: #18A493;
-          border: solid;
-          border-width: 0px;
-          font-size: 17px;
-          font-weight: bold;
-          color: white;
-      }
-    }
-  }
-  .Profile-page{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 60px;
-    width: 100%;
-    .Profile-header, .Profile-username{
-      display: flex;
-      align-self: center;
-      width: 300px;
+      justify-content: center;
+      width: 100%;
+      background-color: #F6F8FA;
+      padding-top: 60px;
+      min-height: calc(100vh - 80px);
       
+      .Access-header{
+        display: flex;
+        margin-bottom: 10px;
+        align-self: center;
+        width: 100px;
+      }
+      .Access-form{
+        width:280px;
+        display:flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 5px 5px #E9EBEC;
+        padding: 20px;
+        padding-bottom: 40px;
+        border-radius: 3px;
+        background-color: white;
+        height: 320px;
+      
+        .Access-field{
+            height: 56px;
+            border-style: solid;
+            border-width: thin;
+            border-radius: 3px;
+            color: rgb(118, 118, 118);
+            border-color: rgb(195, 195, 195);
+            font-size: 17px;
+            padding-left:10px;
+            margin:10px;
+        }
+        .Login-button{
+            width: 260px;
+            height: 56px;
+            margin-left: 10px;
+            margin-top:10px;
+            background-color: #18A493;
+            letter-spacing: 0.00938em;
+            border-radius: 3px;
+            border-color: #18A493;
+            border: solid;
+            border-width: 0px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+        }
+      }
     }
-    .Profile-header{
-      margin:0px
+  
+    .Profile-save {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .Profile-page{
+        display: flex;
+        flex-direction: column;
+        margin: 60px;
+        margin-bottom: 50px;
+    
+        .Profile-header, .Profile-username{
+          display: flex;
+          align-self: center;
+        }
+    
+        .Profile-header{
+          margin-bottom: 15px;
+        }
+      }
+    
+      .Saved-data {
+        display: flex;
+        background-color: lightgrey;
+        flex-direction: column;
+        align-items: center;
+        width: calc(80% - 200px);
+        padding: 1em;
+    
+        .Saved-info {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin: 30px;
+  
+        }
+        .Saved-info-label {
+          margin: 1px;
+        }
+      }
     }
   }
 }
