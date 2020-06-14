@@ -20,7 +20,9 @@ export default function Filter(props) {
 
   // console.log(props);
   if (!props.loggedIn) {
-    return (<Redirect to="/access" />) 
+    return (
+    <Redirect to="/access" />
+    ) 
   };
 
   return (
