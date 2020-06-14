@@ -33,7 +33,7 @@ export default function App() {
   const [maxAge, setMaxAge] = useState(65);
   const [loggedIn, setLoggedIn] = useState(false);
   const [listOfInterests, setListOfInterests] = useState({})
-  const [selectedInterestCategory, setSelectedInterestCategory ] = useState("income")
+  const [selectedInterestCategory, setSelectedInterestCategory ] = useState("family_statuses")
   const [saveObject, setSaveObject] = useState({})
   
   

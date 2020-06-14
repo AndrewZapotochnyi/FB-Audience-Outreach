@@ -1,132 +1,166 @@
-.Page {
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
+body {
+  // height: 100vh;
+  width: 100%;
+  min-width: 1000px;
+  
 
-  .Nav-functionality{ 
+  .Page {
+    font-family: 'Roboto', sans-serif;
     display: flex;
-  
-    .Nav {
-      background-color: black;
+    flex-direction: column;
+    align-items: stretch;
+    
+
+    .Nav-functionality{ 
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-      height: 80px;
-      color: white
-    }
-  
-    .Nav-logo-title {
-      display: flex;
-      align-items: center;
-  
-      .Nav-title {
-        padding-left: 30px;
-        text-decoration: none;
-        color: white;
-        align-items: center;
-      }
-  
-    }
-  
-    .Nav-links {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding-right: 30px;
-  
-      .Nav-button-background {
+    
+      .Nav {
         background-color: black;
-        border: none;
-        height: 50px;
-        padding: 0px;
-        outline: none;
-  
-        .Nav-button {
-          color: white;
-          text-decoration: none;
-          padding: 0px;
-          margin: 10px;
-          border: none;
-        }
-        
-        .Nav-button:hover, .Nav-button:active {
-          border-bottom: solid;
-          outline: white;
-        }
-      }
-    } 
-  }
-  
-  .Filter-Charts {
-    display: flex;
-
-    .Filter {
-      display: flex;
-      flex-direction: column;
-      width: 300px;
-      margin-left: 20px;
-
-      .Filter-header {
-        margin-left: 10px;
-      }
-
-      .Autocomplete{
         display: flex;
-        margin: 10px;
-      }
-
-      .Age {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        margin: 10px;
+        width: 100%;
+        height: 80px;
+        color: white
       }
-
-      .Age-title {
+    
+      .Nav-logo-title {
         display: flex;
         align-items: center;
-        color: rgb(118, 118, 118);
+    
+        .Nav-title {
+          padding-left: 30px;
+          text-decoration: none;
+          color: white;
+          align-items: center;
+        }
+    
       }
-
-      .Age-box {
-        width: 53px;
-        height: 56px;
-        border-radius: 3px;
-        color: rgb(118, 118, 118);
-        border-color: rgb(195, 195, 195);
-        font-size: 17px;
-      }
-
-      .Search-button{ 
-        margin:10px;
-        width: 280px;
-        height: 56px;
-        background-color: #18A493;
-        letter-spacing: 0.00938em;
-        border-radius: 3px;
-        border-color: #18A493;
-        border: solid;
-        border-width: 0px;
-        font-size: 17px;
-        font-weight: bold;
-        color: white;
-      }
+    
+      .Nav-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 30px;
+    
+        .Nav-button-background {
+          background-color: black;
+          border: none;
+          height: 50px;
+          padding: 0px;
+          outline: none;
+    
+          .Nav-button {
+            color: white;
+            text-decoration: none;
+            padding: 0px;
+            margin: 10px;
+            border: none;
+          }
+          
+          .Nav-button:hover, .Nav-button:active {
+            border-bottom: solid;
+            outline: white;
+          }
+        }
+      } 
     }
-
-    .Charts-section{
+    
+    .Filter-Charts {
       display: flex;
-      flex-direction: column;
+      // justify-content: flex-start;
+      height: calc(100vh - 80px);
       width: 100%;
-      margin-left: 20px;
+
+      background-color: #F6F8FA;
+      // height: 100%;
+      align-items: stretch;
+
+      .Filter {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: white;
+        // height: 100%;
+        justify-content: flex-start;
+      
+
+        .Filter-header {
+          // margin-left: 10px;
+          width: 100px;
+        }
+
+        .Autocomplete{
+          display: flex;
+          margin: 10px;
+        }
+
+        .Age {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px;
+        }
+
+        .Age-title {
+          display: flex;
+          align-items: center;
+          color: rgb(118, 118, 118);
+        }
+
+        .Age-box {
+          width: 53px;
+          height: 56px;
+          border-radius: 3px;
+          color: rgb(118, 118, 118);
+          border-color: rgb(195, 195, 195);
+          font-size: 17px;
+        }
+
+        .Search-button{ 
+          margin:10px;
+          width: 280px;
+          height: 56px;
+          background-color: #18A493;
+          letter-spacing: 0.00938em;
+          border-radius: 3px;
+          border-color: #18A493;
+          border: solid;
+          border-width: 0px;
+          font-size: 17px;
+          font-weight: bold;
+          color: white;
+        }
+      }
+
+      .Charts-section{
+        // display: flex;
+        // flex-direction: column;
+        width: calc(100%-350px);
+        margin: 50px;
+        background-color: #F6F8FA;
+      }
+
+      .Charts{
+        width: 100%;
+        
+      }
+
+      .Chart{
+        width: 80vh;
+        height: 80%;
+       
+      }
+
+      .category-buttons{
+        margin-bottom: 20px;
+      }
     }
 
-    .Charts{
-      width: 800px;
-    }
   }
 
 }
-
 
 
 
