@@ -28,30 +28,26 @@ export default function Access(props) {
   }
 
     return(
-      <div>
-      {props.loggedIn ? <Redirect to="/home" /> : <form className="form" onSubmit={(event) => handleOnSubmit(event)}>
-      <label htmlFor="email">Email: </label>
-      <br />
-      <input
+      <div className="Access-page">
+      {props.loggedIn ? <Redirect to="/home" /> : <form className="Access-form" onSubmit={(event) => handleOnSubmit(event)}>
+      <h1 className="Access-header">Access</h1>
+      <input className="Access-field"
         name="email"
         id="email"
         type="email"
         value={email}
+        placeholder="Enter Email"
         onChange={(event) => setEmail(event.target.value)}
       />
-      <br /> <br />
-      <label htmlFor="password">Password: </label>
-      <br />
-      <input
+      <input className="Access-field"
         name="password"
         id="password"
         type="password"
         value={password}
+        placeholder="Enter Password"
         onChange={(event) => setPassword(event.target.value)}
         />
-      <br /><br />
-      <input type="submit" />
-        <br />
+      <input className="Login-button" type="submit" value="Enter" />
     </form>}
     </div>
     )
