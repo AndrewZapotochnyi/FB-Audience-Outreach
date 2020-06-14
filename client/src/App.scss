@@ -101,6 +101,7 @@ body {
       // justify-content: flex-start;
       height: calc(100vh - 80px);
       width: 100%;
+      color: #F6F8FA;
 
       background-color: #F6F8FA;
       // height: 100%;
@@ -120,6 +121,7 @@ body {
         .Filter-header {
           // margin-left: 10px;
           width: 100px;
+          color: black;
         }
 
         .Autocomplete{
@@ -189,7 +191,50 @@ body {
     }
 
   }
-
+  .Access-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+    .Access-header{
+      display: flex;
+      margin-bottom: 10px;
+      align-self: center;
+      width: 100px;
+    }
+    .Access-form{
+      width:280px;
+      display:flex;
+      flex-direction: column;
+      .Access-field{
+          height: 56px;
+          border-style: solid;
+          border-width: thin;
+          border-radius: 3px;
+          color: rgb(118, 118, 118);
+          border-color: rgb(195, 195, 195);
+          font-size: 17px;
+          padding-left:10px;
+          margin:10px;
+      }
+      .Login-button{
+          width: 260px;
+          height: 56px;
+          margin-left: 10px;
+          margin-top:10px;
+          background-color: #18A493;
+          letter-spacing: 0.00938em;
+          border-radius: 3px;
+          border-color: #18A493;
+          border: solid;
+          border-width: 0px;
+          font-size: 17px;
+          font-weight: bold;
+          color: white;
+      }
+    }
+  }
+  
 }
 
 

@@ -264,7 +264,6 @@ export default function App() {
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         </style>
-
         <div className="Nav-functionality">
           <nav className="Nav">
             <div className="Nav-logo-title">
