@@ -12,6 +12,7 @@ body {
     
     .Nav-functionality{ 
       display: flex;
+      
     
       .Nav {
         background-color: black;
@@ -20,7 +21,8 @@ body {
         justify-content: space-between;
         width: 100%;
         height: 80px;
-        color: white
+        color: white;
+        
       }
     
       .Nav-logo-title {
@@ -48,7 +50,6 @@ body {
           border-bottom-color: #1ECAAE;
           border-bottom-width: 5px;
           border-bottom-style: solid;
-          
         }
     
         .Nav-button-background {
@@ -70,21 +71,30 @@ body {
           }
 
           .Nav-button:hover, .Nav-button:active {
-            // border-bottom: solid;
-            // outline: white;
-            // height: 80px;
-            // border-bottom-width: medium;
-            // border-color: white;
-            // border-style: solid;
+         
             
             height: 80px;
-            // border-bottom-width: medium;
-            // border-bottom: solid;
-            // border-bottom-color: white;
+        
           }
 
           
         }
+
+        .avatar{
+          background-color: black;
+          border: none;
+          height: 80px;
+          padding: 0px;
+          outline: none;
+        }
+
+        .avatar-image{
+          width: 50px;
+          height: 50px;
+          margin-left: 20px;
+        }
+
+
       } 
     }
 
@@ -93,13 +103,14 @@ body {
     .Filter-Charts {
       display: flex;
       // justify-content: flex-start;
-      height: calc(100vh - 80px);
+      min-height: calc(100vh - 80px);
       width: 100%;
       color: #F6F8FA;
 
       background-color: #F6F8FA;
       // height: 100%;
       align-items: stretch;
+      height: max-content;
 
       .Filter {
         display: flex;
@@ -110,6 +121,8 @@ body {
         background-color: white;
         // height: 100%;
         justify-content: flex-start;
+
+        
       
 
         .Filter-header {
@@ -142,6 +155,16 @@ body {
           color: rgb(118, 118, 118);
           border-color: rgb(195, 195, 195);
           font-size: 17px;
+          padding-left: 6px;
+          padding-right: 5px;
+        }
+
+        .Age-box:hover, Age-box:active{
+          border-color: black;
+        }
+
+        .Search-button:hover, .Search-button:active {
+          box-shadow: 0px 0px 5px 5px #E9EBEC;
         }
 
         .Search-button{ 
@@ -160,12 +183,22 @@ body {
         }
       }
 
+      .chose-city{
+        align-self: center;
+        color: #ff5d39;
+        margin-left: 80px;
+        margin-top: 10px;
+      }
+
       .Charts-section{
         // display: flex;
         // flex-direction: column;
         width: calc(100%-350px);
         margin: 50px;
         background-color: #F6F8FA;
+        // overflow:auto; 
+        color:black;
+       
       }
 
       .Charts{
@@ -175,24 +208,49 @@ body {
 
       .Chart{
         width: 80vh;
-        height: 80%;
-       
+        // height: 80%;
+        background-color: white;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 5px #E9EBEC;
       }
 
       .category-buttons{
         margin-bottom: 20px;
+        border-color: black;
       }
 
-      .Error {
-        color: black;
-        display: flex;
-        align-items: center;
-        margin: 50px;
-        background-color: pink;
-        height: 53px;
-        border-radius: 3px;
-        padding: 13px;
+      .chart-buttons-all{
+        display:flex;
+        justify-content: space-between;
       }
+
+      .save-search-button:hover, .save-search-button:active {
+        box-shadow: 0px 0px 2px 2px lightgrey;
+      }
+
+      .save-search-button{
+        height: 36px;
+        border-radius: 3px;
+        width: 100px;
+        background-color: #18A493; 
+        border-color: #18A493;
+        border: solid;
+        border-width: 0px;  
+        color: white;
+      }
+
+      .facebook-api-error{
+        margin: 100px;
+        background-color: white;
+        height: 400px;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 0px 0px 5px 5px #E9EBEC;
+      }
+
+
     }
 
     .Access-page{

@@ -43,13 +43,13 @@ export default function Filter(props) {
         <Interest setInterest={setInterest}/>
 
         { props.city === null &&
-          <div className="Search-button">
-          <button type="button" value="Submit" onClick={() => {
-            // onSubmit(interest)
-          }
+          <div>
+            <button className="Search-button" type="button" value="Submit" onClick={() => {
+                // onSubmit(interest)
+              }
         }>Search</button>
-          <div>Choose city first! </div>
-        </div>
+            <div className="chose-city"><b>Choose city first! </b></div>
+          </div>
         }
         { props.city && <button className="Search-button" type="button" value="Submit" onClick={() => {
             onSubmit(interest)

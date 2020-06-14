@@ -46,11 +46,11 @@ const useStyles = makeStyles((theme) => ({
     datasets: [
       {
         label: 'Audience Results',
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
+        backgroundColor: 'rgba(253, 123, 95, 0.25)',
+          borderColor: 'rgba(253, 123, 95, 1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(253, 123, 95, 0.5)',
+          hoverBorderColor: 'rgba(253, 123, 95, 1)',
         data: saveObject ? saveObject.reachEstimates.map(item => item.data.data.users) : []
       }
     ]
