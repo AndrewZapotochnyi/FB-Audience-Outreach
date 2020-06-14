@@ -1,12 +1,17 @@
-.Page {
+body {
+  width: 100%;
+  min-width: 1000px;
+}
+body .Page {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
-.Page .Nav-functionality {
+body .Page .Nav-functionality {
   display: flex;
 }
-.Page .Nav-functionality .Nav {
+body .Page .Nav-functionality .Nav {
   background-color: black;
   display: flex;
   flex-direction: row;
@@ -15,68 +20,74 @@
   height: 80px;
   color: white;
 }
-.Page .Nav-functionality .Nav-logo-title {
+body .Page .Nav-functionality .Nav-logo-title {
   display: flex;
   align-items: center;
 }
-.Page .Nav-functionality .Nav-logo-title .Nav-title {
+body .Page .Nav-functionality .Nav-logo-title .Nav-title {
   padding-left: 30px;
   text-decoration: none;
   color: white;
   align-items: center;
 }
-.Page .Nav-functionality .Nav-links {
+body .Page .Nav-functionality .Nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-right: 30px;
 }
-.Page .Nav-functionality .Nav-links .Nav-button-background {
+body .Page .Nav-functionality .Nav-links .Nav-button-background {
   background-color: black;
   border: none;
   height: 50px;
   padding: 0px;
   outline: none;
 }
-.Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button {
+body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button {
   color: white;
   text-decoration: none;
   padding: 0px;
   margin: 10px;
   border: none;
 }
-.Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:hover, .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:active {
+body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:hover, body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:active {
   border-bottom: solid;
   outline: white;
 }
-.Page .Filter-Charts {
+body .Page .Filter-Charts {
   display: flex;
-  flex-direction: row;
+  height: calc(100vh - 80px);
+  width: 100%;
+  background-color: #F6F8FA;
+  align-items: stretch;
 }
-.Page .Filter-Charts .Filter {
+body .Page .Filter-Charts .Filter {
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  justify-content: flex-start;
 }
-.Page .Filter-Charts .Filter .Filter-header {
-  margin-left: 10px;
+body .Page .Filter-Charts .Filter .Filter-header {
+  width: 100px;
 }
-.Page .Filter-Charts .Filter .Autocomplete {
+body .Page .Filter-Charts .Filter .Autocomplete {
   display: flex;
   margin: 10px;
 }
-.Page .Filter-Charts .Filter .Age {
+body .Page .Filter-Charts .Filter .Age {
   display: flex;
   justify-content: space-between;
   margin: 10px;
 }
-.Page .Filter-Charts .Filter .Age-title {
+body .Page .Filter-Charts .Filter .Age-title {
   display: flex;
   align-items: center;
   color: #767676;
 }
-.Page .Filter-Charts .Filter .Age-box {
+body .Page .Filter-Charts .Filter .Age-box {
   width: 53px;
   height: 56px;
   border-radius: 3px;
@@ -84,7 +95,7 @@
   border-color: #c3c3c3;
   font-size: 17px;
 }
-.Page .Filter-Charts .Filter .Search-button {
+body .Page .Filter-Charts .Filter .Search-button {
   margin: 10px;
   width: 280px;
   height: 56px;
@@ -98,14 +109,20 @@
   font-weight: bold;
   color: white;
 }
-.Page .Filter-Charts .Charts-section {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-left: 20px;
+body .Page .Filter-Charts .Charts-section {
+  width: calc(100%-350px);
+  margin: 50px;
+  background-color: #F6F8FA;
 }
-.Page .Filter-Charts .Charts {
-  width: 800px;
+body .Page .Filter-Charts .Charts {
+  width: 100%;
+}
+body .Page .Filter-Charts .Chart {
+  width: 80vh;
+  height: 80%;
+}
+body .Page .Filter-Charts .category-buttons {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */
