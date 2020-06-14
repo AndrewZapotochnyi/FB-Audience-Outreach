@@ -51,6 +51,7 @@
 }
 .Page .Filter-Charts {
   display: flex;
+  flex-direction: row;
 }
 .Page .Filter-Charts .Filter {
   display: flex;

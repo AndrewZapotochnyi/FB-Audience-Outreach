@@ -264,6 +264,7 @@ export default function App() {
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         </style>
+
         <div className="Nav-functionality">
           <nav className="Nav">
             <div className="Nav-logo-title">
@@ -300,7 +301,7 @@ export default function App() {
           {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         </div>
         <Switch>
-          <div class ="Filter-Charts">
+          {/* <div class ="Filter-Charts"> */}
             <Route path="/home">
               <Filter
                 name={firstInterest.name} 
@@ -319,7 +320,7 @@ export default function App() {
               {reachEstimates.length && 
               <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
             </Route>
-          </div>
+          {/* </div> */}
           <Route path="/about">
             <About />
           </Route>
