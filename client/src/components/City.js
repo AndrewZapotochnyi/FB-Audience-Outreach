@@ -28,7 +28,7 @@ export default function City(props) {
         options={props.cities}
         getOptionLabel={(option) => option.name}
         style={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="City Dropdown" variant="outlined"/>}
+        renderInput={(params) => <TextField {...params} label="Choose A City" variant="outlined"/>}
         onChange={(event, value) => props.setCity(value)}
         onInputChange={(event, value) => setSearchText(value)}
       />

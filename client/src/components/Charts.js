@@ -42,29 +42,46 @@ const useStyles = makeStyles((theme) => ({
 
   const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest, onSaveAudience }) => {
   
-  const categoryTypes = ["family_statuses" , "industries", "interests", "behaviors", "income"]
+  // const categoryTypes = ["family_statuses" , "industries", "interests", "behaviors", "income"]
   
-  // console.log("Reach estimates:", reachEstimates);
  
-  // let typesRender = function() {
-  //   return (<div>
-  //     {categoryTypes.map((type, index) => (
-  //         <Button>{type}</Button>
-  //     ))}
-  //     </div>);    
-  // }
 
-  const typesRender = categoryTypes.map(type => {
-    return (
-      <Button onClick={() => {
-        // filterInterest={filterInterest} onSubmitInterest={onSubmitInterest}
-        setSelectedInterestCategory(type)
-        // onSubmitInterest(filterInterest.name)
-      }}>{type}</Button> )
-    });
-  
+  // const typesRender = categoryTypes.map(type => {
+  //   return (
+  //     <Button style={{
+  //       color: "black",
+  //       borderColor: "black"
+  //       }} onClick={() => {
+        
+  //       setSelectedInterestCategory(type)
+        
+  //     }}>{type}</Button>)
+  //   });
+
+
+  const categoryTypesSmart = [["family_statuses", "Family", 80 ], ["interests", "Interests", 100], ["behaviors", "Behaviours", 100 ], ["industries", "Industries", 240 ], ["income", "Income", 40]]
+
+  const typesRender = categoryTypesSmart.map(type => {
+      return (
+        <Button style={{
+          color: "black",
+          borderColor: "black"
+          }} onClick={() => {
+          
+          setSelectedInterestCategory(type[0])
+          
+        }}>{type[1]}</Button>)
+      });
+    
     if (reachEstimates[0].data.error) {
-      return (<div>{reachEstimates[0].data.error.message}</div>)
+      return (<div className="facebook-api-error">
+        <h2>Sorry.</h2>
+          <p> Due to the limitations of Facebook API, we can only have 200 requests/per hour. This message means that we have reached the limit. 
+          Please wait a few minutes before trying again.
+          See more details about this error from Facebook below:
+          </p>
+        <div>{reachEstimates[0].data.error.message}</div>
+      </div>)
     }
   
     const defaultChartsData = {
@@ -72,32 +89,37 @@ const useStyles = makeStyles((theme) => ({
       datasets: [
         {
           label: 'Audience Results',
-          backgroundColor: 'rgba(255,99,132,0.2)',
-          borderColor: 'rgba(255,99,132,1)',
+          backgroundColor: 'rgba(253, 123, 95, 0.25)',
+          borderColor: 'rgba(253, 123, 95, 1)',
           borderWidth: 1,
-          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-          hoverBorderColor: 'rgba(255,99,132,1)',
+          hoverBackgroundColor: 'rgba(253, 123, 95, 0.5)',
+          hoverBorderColor: 'rgba(253, 123, 95, 1)',
           data: reachEstimates ? reachEstimates.map(item => item.data.data.users) : []
         }
       ]
     };
 
-    console.log("Charts data: ", defaultChartsData);
+    
 
     return (
       <div className="Charts-section">
-        <div>
+        <h1 className="">Results Report</h1>
+        <div className="chart-buttons-all">
           <ButtonGroup className="category-buttons" color="primary" aria-label="outlined primary button group">
             {typesRender}
           </ButtonGroup>
+
+          <button class="save-search-button" onClick={() => onSaveAudience()}> Save Search </button>
         </div>
 
-        <button onClick={() => onSaveAudience()}> Save Search </button>
+        
 
         {/* {chartsRender} */}
         <div className="Chart">
           <HorizontalBar
             data={defaultChartsData}
+           
+            height={1500}
   
             options={{
               maintainAspectRatio: false

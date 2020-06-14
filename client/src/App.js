@@ -14,6 +14,7 @@ import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Saves from "./components/Saves";
 import {getReachEstimate} from "./helpers/getReachEstimate";
+import avatar from './img/avatar.png';
 
 require('dotenv').config()
 const token = process.env.REACT_APP_ACCESS_TOKEN
@@ -296,9 +297,9 @@ export default function App() {
                 </button>
               </>
             }
-             <button className="Nav-button-background">
-              {/* <img src="./img/avatar.png" /> */}
-              {/* <Image source={require('./img/avatar.png')} /> */}
+             <button className="avatar">
+              <img className="avatar-image" src={avatar} alt="avatar" />;
+ 
             </button>
             </div> 
           </nav>
