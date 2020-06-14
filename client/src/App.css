@@ -36,10 +36,16 @@ body .Page .Nav-functionality .Nav-links {
   align-items: center;
   padding-right: 30px;
 }
+body .Page .Nav-functionality .Nav-links .Nav-button-background:hover {
+  color: #1ECAAE;
+  border-bottom-color: #1ECAAE;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+}
 body .Page .Nav-functionality .Nav-links .Nav-button-background {
   background-color: black;
   border: none;
-  height: 50px;
+  height: 80px;
   padding: 0px;
   outline: none;
 }
@@ -47,12 +53,13 @@ body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button {
   color: white;
   text-decoration: none;
   padding: 0px;
-  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   border: none;
+  height: 80px;
 }
 body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:hover, body .Page .Nav-functionality .Nav-links .Nav-button-background .Nav-button:active {
-  border-bottom: solid;
-  outline: white;
+  height: 80px;
 }
 body .Page .Filter-Charts {
   display: flex;

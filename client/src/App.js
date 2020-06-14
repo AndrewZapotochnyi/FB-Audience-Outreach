@@ -296,13 +296,18 @@ export default function App() {
                 </button>
               </>
             }
+             <button className="Nav-button-background">
+              {/* <img src="./img/avatar.png" /> */}
+              {/* <Image source={require('./img/avatar.png')} /> */}
+            </button>
             </div> 
           </nav>
           {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
         </div>
         <Switch>
-          <div class ="Filter-Charts">
+         
             <Route path="/home">
+            <div class ="Filter-Charts">
               <Filter
                 name={firstInterest.name} 
                 onSubmitInterest={onSubmitInterest} 
@@ -319,8 +324,9 @@ export default function App() {
                 /> 
               {reachEstimates.length && 
               <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+            </div>
             </Route>
-          </div>
+          
           <Route path="/about">
             <About />
           </Route>
