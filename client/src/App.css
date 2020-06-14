@@ -153,9 +153,6 @@ body .Page .Filter-Charts .Charts-section {
   background-color: #F6F8FA;
   color: black;
 }
-body .Page .Filter-Charts .Charts {
-  width: 100%;
-}
 body .Page .Filter-Charts .Chart {
   width: 80vh;
   background-color: white;

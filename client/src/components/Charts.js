@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   //   });
 
 
-  const categoryTypesSmart = [["family_statuses", "Family", 80 ], ["interests", "Interests", 100], ["behaviors", "Behaviours", 100 ], ["industries", "Industries", 240 ], ["income", "Income", 40]]
+  const categoryTypesSmart = [["family_statuses", "Family", 80 ], ["interests", "Interests", 100], ["behaviors", "Behaviours", 100 ], ["industries", "Industries", 240 ], ["income", "Income (US)", 40]]
 
   const typesRender = categoryTypesSmart.map(type => {
       return (
@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
         
 
         {/* {chartsRender} */}
-        <div className="Charts">
+        <div className="Chart">
           <HorizontalBar
             data={defaultChartsData}
            
