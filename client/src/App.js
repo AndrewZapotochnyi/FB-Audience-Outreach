@@ -346,9 +346,11 @@ export default function App() {
           </Route>
           <Route path="/profile">
             <div className="Profile-save">
-              <Profile>
+            {saveObject && 
+              <Profile saveObject={saveObject}>
               </Profile>
-              {!saveObject.reachEstimates && <SearchNotice />}
+            }
+              
               {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
             </div> 
           </Route>
