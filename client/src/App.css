@@ -23,6 +23,8 @@ body .Page .Nav-functionality .Nav {
   width: 100%;
   height: 80px;
   color: white;
+  position: relative;
+  box-shadow: 0px 5px 10px #999;
 }
 body .Page .Nav-functionality .Nav-logo-title {
   display: flex;
