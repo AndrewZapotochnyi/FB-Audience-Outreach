@@ -14,7 +14,9 @@ import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Saves from "./components/Saves";
 import {getReachEstimate} from "./helpers/getReachEstimate";
+
 import avatar from './img/avatar.png';
+import logo from './img/telescope.png';
 
 require('dotenv').config()
 const token = process.env.REACT_APP_ACCESS_TOKEN
@@ -264,12 +266,17 @@ export default function App() {
       <div className="Page">
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
         </style>
         <div className="Nav-functionality">
           <nav className="Nav">
+            
+           
+            
             <div className="Nav-logo-title">
+            <img className="logo-image" src={logo} alt="logo" />
               {/* <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img> */}
-              <h1><Link className="Nav-title" to="/">TheSocialScope</Link></h1>
+              <h1><Link className="Nav-title" to="/">The Social Scope</Link></h1>
             </div>
             <div className="Nav-links">
             {/* <button className="Nav-button-background">
@@ -298,7 +305,6 @@ export default function App() {
             }
              <button className="avatar">
               <img className="avatar-image" src={avatar} alt="avatar" />;
- 
             </button>
             </div> 
           </nav>

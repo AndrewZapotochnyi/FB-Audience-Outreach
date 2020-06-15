@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
           <HorizontalBar
             data={defaultChartsData}
            
-            height={1500}
+            height={500}
   
             options={{
               maintainAspectRatio: false
