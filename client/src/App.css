@@ -12,8 +12,7 @@ body .Page .Nav-functionality {
   display: flex;
 }
 body .Page .Nav-functionality .logo-image {
-  width: 60px;
-  height: 60px;
+  width: 50px;
   margin-left: 30px;
 }
 body .Page .Nav-functionality .Nav {
@@ -35,7 +34,7 @@ body .Page .Nav-functionality .Nav-logo-title .Nav-title {
   align-items: center;
   margin-left: 10px;
   padding-bottom: 20px;
-  font-size: 30px;
+  font-size: 26px;
 }
 body .Page .Nav-functionality .Nav-links {
   display: flex;
