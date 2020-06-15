@@ -288,6 +288,15 @@ body .Page .Profile-save .Profile-page .Profile-header {
   margin-bottom: 15px;
   font-size: 25px;
 }
+body .Page .Profile-save .Search-notice {
+  display: flex;
+  background-color: white;
+  width: 29em;
+  padding: 2em;
+  box-shadow: 0px 0px 5px 5px #E9EBEC;
+  border-radius: 5px;
+  justify-content: center;
+}
 body .Page .Profile-save .Saved-data {
   display: flex;
   background-color: white;

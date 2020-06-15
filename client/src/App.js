@@ -13,6 +13,7 @@ import About from './components/About';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Saves from "./components/Saves";
+import SearchNotice from "./components/SearchNotice";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 import avatar from './img/avatar.png';
@@ -346,6 +347,7 @@ export default function App() {
             <div className="Profile-save">
               <Profile>
               </Profile>
+              {!saveObject.reachEstimates && <SearchNotice />}
               {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
             </div> 
           </Route>
