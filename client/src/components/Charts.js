@@ -36,8 +36,16 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-  const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest, onSaveAudience }) => {
+  const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest, onSaveAudience, selectedInterestCategory, chartsHeight, setChartsHeight }) => {
   
+
+   
+
+
+    useEffect(() => {
+      // this.forceUpdate()
+      }, [chartsHeight])
+
   // const categoryTypes = ["family_statuses" , "industries", "interests", "behaviors", "income"]
   
  
@@ -55,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   //   });
 
 
-  const categoryTypesSmart = [["family_statuses", "Family", 80 ], ["interests", "Interests", 100], ["behaviors", "Behaviours", 100 ], ["industries", "Industries", 240 ], ["income", "Income (US)", 40]]
+  const categoryTypesSmart = [["family_statuses", "Family", 300 ], ["interests", "Interests", 1000], ["behaviors", "Behaviours", 1000 ], ["industries", "Industries", 1000 ], ["income", "Income (US)", 300]]
 
   const typesRender = categoryTypesSmart.map(type => {
       return (
@@ -65,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
           }} onClick={() => {
           
           setSelectedInterestCategory(type[0])
+          setChartsHeight(type[2])
           
         }}>{type[1]}</Button>)
       });
@@ -115,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
           <HorizontalBar
             data={defaultChartsData}
            
-            height={500}
+            height={1000}
   
             options={{
               maintainAspectRatio: false

@@ -39,6 +39,7 @@ export default function App() {
   const [listOfInterests, setListOfInterests] = useState({})
   const [selectedInterestCategory, setSelectedInterestCategory ] = useState("family_statuses")
   const [saveObject, setSaveObject] = useState({})
+  const [chartsHeight, setChartsHeight] = useState(500)
   
   
   useEffect(() => {
@@ -330,7 +331,7 @@ export default function App() {
                 loggedIn={loggedIn}
                 /> 
               {reachEstimates.length && 
-              <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+              <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience} selectedInterestCategory={selectedInterestCategory} chartsHeight={chartsHeight} setChartsHeight={setChartsHeight}/>}
             </div>
             </Route>
           
