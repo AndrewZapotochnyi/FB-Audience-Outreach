@@ -6,7 +6,7 @@ const axios = require('axios');
 
 export default function City(props) {
 
-  let access_token = process.env.REACT_APP_ACCESS_TOKEN;
+  const cityToken = process.env.REACT_APP_CITY_TOKEN;
   let city = props.city;
   let country_code = props.countryCode;
 
@@ -14,7 +14,7 @@ export default function City(props) {
   const [ error, setError ] = useState(false)
 
   useEffect (() => {
-    axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${searchText}&country_code=${country_code}&type=adgeolocation&access_token=EAABsbCS1iHgBABiggGy6bzJuUpMdCoZAkc3c1pOCdhTMZBGZA7q3mf54Q0EJfoLoywvNPSVDTrYjEf1OOc38jEWietokHb8UVJvJmT91iu0eZCXJUZAX51d66aehVV5qXiIVhPxJOKkpHpT4ZBwUnMr3KjmFZBZB77QZCXAx5ZAtfwqgZDZD`)
+    axios.get(`https://graph.facebook.com/v7.0/search/?location_types=city&q=${searchText}&country_code=${country_code}&type=adgeolocation&access_token=${cityToken}`)
     .then(res => {
       props.setCities(res.data.data);
     })

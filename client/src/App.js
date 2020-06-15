@@ -176,8 +176,8 @@ export default function App() {
           family_statuses: interestFamilyStatuses,
           relationship_statuses: interestRelationshipStatuses,
           education_statuses: interestEducationStatuses,
-          interests: interestsInterests.slice(0, 10),
-          behaviors: interestsBehaviors.slice(0, 10)
+          interests: interestsInterests.slice(0, 30),
+          behaviors: interestsBehaviors.slice(0, 30)
         });
 
 
