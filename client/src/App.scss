@@ -385,6 +385,7 @@ body {
         box-shadow: 0px 0px 5px 5px #E9EBEC;
         border-radius: 5px;
         justify-content: center;
+        margin-top: 45px;
       }
     
       .Saved-data {
@@ -408,6 +409,140 @@ body {
           margin-top: 0px;
         }
       }
+    }
+  }
+
+  .Landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    .Landing-header {
+      display: flex;
+      flex-direction: column;
+      background-color: #F6F8FA;
+      padding-top: 75px;
+      width: 100%;
+      height: 700px;
+
+      .Landing-h1 {
+        font-size: 40px;
+      }
+
+      .Landing-h3 {
+        margin-bottom: 40px;
+      }
+
+      .Landing-access {
+        border: solid;
+        text-decoration: none;
+        margin-top: 1em;
+        padding: 9px;
+        background-color: #18A493;
+        letter-spacing: 0.00938em;
+        border-radius: 5px;
+        border: solid;
+        border-width: 0px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        width: 100px;
+        align-self: center;
+        margin-bottom: 65px;
+      }
+
+      .Landing-preview-background {
+        background-color: white;
+        width: 60%;
+        align-self: center;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px #999;
+      }
+
+      .Landing-preview {
+        width: 90%;
+        align-self: center;
+        border-radius: 10px;
+      }
+    }
+
+    .Landing-features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .Landing-features-h2 {
+        padding-top: 180px;
+        font-size: 30px;
+        // letter-spacing: 1px;
+        margin-bottom: 0;
+      }
+
+      .Landing-features-divs {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 5%;
+
+        .Landing-features-single-div {
+          width: 163px;
+          margin: 40px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+  
+          .Landing-features-icon {
+            width: 200px;
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    .Landing-creators {
+      display: flex;
+      flex-direction: row;
+      background-color:  #18A493;
+      justify-content: center;
+      color: white;
+      padding: 5em;
+      
+      .Landing-titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-right: 30px;
+        text-align: left;
+      }
+
+      .Landing-names {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-right: 5px;
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .Landing-github-bunch {
+        display: flex;
+        flex-direction: column;
+
+        .Landing-github {
+          border: transparent;
+          width: 40px;
+        }
+
+        .Landing-github:hover {
+          width: 45px;
+        }
+        
+      }
+
+      
+
     }
   }
 }

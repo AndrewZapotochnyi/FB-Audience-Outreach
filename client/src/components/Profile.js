@@ -8,7 +8,9 @@ export default function Profile(props) {
       <img className="Profile-image" src={avatar} alt="avatar" />
       <h1 className="Profile-header">Geralt of Rivia</h1>
       <span className="Profile-username">@geraltofrivia</span>
-      {!props.saveObject.reachEstimates && <SearchNotice />}
+      <div>
+        {!props.saveObject.reachEstimates && <SearchNotice />}
+      </div>
     </div>
   )
 }

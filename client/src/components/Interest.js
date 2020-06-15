@@ -35,7 +35,11 @@ export default function Interest(props) {
         getOptionSelected={(option, value) => option.id === value.id}
         style={{ width: 300 }}
         renderInput={(params) => <TextField {...params} label="Interest Search" variant="outlined"/>}
-        onChange={(event, value) => {props.setInterest(value.name); console.log("Value onchange", value.name)}}
+        onChange={(event, value) => {
+          if(value !== null) {
+            props.setInterest(value.name); console.log("Value onchange", value.name)
+          }
+        }}
         onInputChange={(event, value) => setSearchText(value)}
       />
     </div>
