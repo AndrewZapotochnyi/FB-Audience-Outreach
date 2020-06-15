@@ -13,7 +13,7 @@ import About from './components/About';
 import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Saves from "./components/Saves";
-import SearchNotice from "./components/SearchNotice";
+import Landing from "./components/Landing";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 import avatar from './img/avatar.png';
@@ -272,9 +272,6 @@ export default function App() {
         </style>
         <div className="Nav-functionality">
           <nav className="Nav">
-            
-           
-            
             <div className="Nav-logo-title">
             <img className="logo-image" src={logo} alt="logo" />
               {/* <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img> */}
@@ -292,7 +289,7 @@ export default function App() {
             {loggedIn && 
               <>
                 <button className="Nav-button-background">
-                  <Link className="Nav-button" to="/home">Filter</Link>
+                  <Link className="Nav-button" to="/home">Dashboard</Link>
                 </button>
                 <button className="Nav-button-background">
                   <Link className="Nav-button" to="/profile">Profile</Link>
@@ -303,11 +300,11 @@ export default function App() {
                 }}>
                   <Link className="Nav-button" to="/access">Logout</Link>
                 </button>
+                <button className="avatar">
+                  <img className="avatar-image" src={avatar} alt="avatar" />;
+                </button>
               </>
             }
-             <button className="avatar">
-              <img className="avatar-image" src={avatar} alt="avatar" />;
-            </button>
             </div> 
           </nav>
           {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
@@ -353,6 +350,9 @@ export default function App() {
               
               {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
             </div> 
+          </Route>
+          <Route path="/">
+            <Landing/>
           </Route>
         </Switch>
       </div>
