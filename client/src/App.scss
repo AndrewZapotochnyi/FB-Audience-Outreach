@@ -60,7 +60,7 @@ body {
           align-items: center;
           margin-left: 10px;
           padding-bottom: 20px;
-          font-size: 25px;
+          font-size: 30px;
           // font-family: 'Roboto Slab', serif;
 
         }
@@ -150,16 +150,12 @@ body {
         // height: 100%;
         justify-content: flex-start;
 
-        
-      
-
         .Filter-header {
           margin-top: 30px;
           // margin-left: 10px;
           width: 100px;
           color: black;
-          
-          font-size: 20px;
+          font-size: 25px;
         }
 
         .Autocomplete{
@@ -234,7 +230,7 @@ body {
       }
 
       .Charts-section h1 {
-        font-size: 20px;
+        font-size: 25px;
         margin-top: 0px;
       }
 
@@ -376,6 +372,7 @@ body {
     
         .Profile-header{
           margin-bottom: 15px;
+          font-size: 25px;
         }
       }
     
@@ -392,12 +389,12 @@ body {
         .Saved-info {
           display: flex;
           flex-direction: column;
-          text-align: center;
           margin: 30px;
-  
         }
+
         .Saved-info-label {
-          margin: 1px;
+          margin-bottom: 20px;
+          margin-top: 0px;
         }
       }
     }

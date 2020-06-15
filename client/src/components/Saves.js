@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   return (
     <div className="Saved-data">
       <div className="Saved-info">
-        <label className="Saved-info-label">Latest Saved Search:</label>
+        <h3 className="Saved-info-label">Latest saved search:</h3>
         <span>Results for individuals in {removeUnderscore(saveObject.selectedInterestCategory)} demographic living in {saveObject.city.name}, between the ages of {saveObject.minAge} and {saveObject.maxAge}, and interested in {saveObject.filterInterest.name}.</span>
       </div>
       {/* {chartsRender} */}

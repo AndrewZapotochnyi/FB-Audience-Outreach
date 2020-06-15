@@ -35,7 +35,7 @@ body .Page .Nav-functionality .Nav-logo-title .Nav-title {
   align-items: center;
   margin-left: 10px;
   padding-bottom: 20px;
-  font-size: 25px;
+  font-size: 30px;
 }
 body .Page .Nav-functionality .Nav-links {
   display: flex;
@@ -103,7 +103,7 @@ body .Page .Filter-Charts .Filter .Filter-header {
   margin-top: 30px;
   width: 100px;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
 }
 body .Page .Filter-Charts .Filter .Autocomplete {
   display: flex;
@@ -163,7 +163,7 @@ body .Page .Filter-Charts .Charts-section {
   margin-top: 30px;
 }
 body .Page .Filter-Charts .Charts-section h1 {
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 0px;
 }
 body .Page .Filter-Charts .Chart {
@@ -284,6 +284,7 @@ body .Page .Profile-save .Profile-page .Profile-header, body .Page .Profile-save
 }
 body .Page .Profile-save .Profile-page .Profile-header {
   margin-bottom: 15px;
+  font-size: 25px;
 }
 body .Page .Profile-save .Saved-data {
   display: flex;
@@ -298,11 +299,11 @@ body .Page .Profile-save .Saved-data {
 body .Page .Profile-save .Saved-data .Saved-info {
   display: flex;
   flex-direction: column;
-  text-align: center;
   margin: 30px;
 }
 body .Page .Profile-save .Saved-data .Saved-info-label {
-  margin: 1px;
+  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
 /*# sourceMappingURL=App.css.map */
