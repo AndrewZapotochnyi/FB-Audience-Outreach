@@ -14,6 +14,7 @@ import Filter from "./components/Filter";
 import Charts from "./components/Charts";
 import Saves from "./components/Saves";
 import Landing from "./components/Landing";
+import MakeSearch from "./components/MakeSearch";
 import {getReachEstimate} from "./helpers/getReachEstimate";
 
 import avatar from './img/avatar.png';
@@ -329,6 +330,7 @@ export default function App() {
                 /> 
               {reachEstimates.length && 
               <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience} selectedInterestCategory={selectedInterestCategory} chartsHeight={chartsHeight} setChartsHeight={setChartsHeight}/>}
+              {!reachEstimates.length && <MakeSearch/>}
             </div>
             </Route>
           
