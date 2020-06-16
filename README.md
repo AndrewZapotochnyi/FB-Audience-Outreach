@@ -7,6 +7,6 @@ The web app enables users to access statistical data about particular demographi
 ## Preview
 
 ## Commands to launch: 
-React - npm start 
-Rails - bin/rails s -b 0.0.0.0 -p 3001
-Sass - sass --watch App.scss App.css
+* React - npm start 
+* Rails - bin/rails s -b 0.0.0.0 -p 3001
+* Sass - sass --watch App.scss App.css
