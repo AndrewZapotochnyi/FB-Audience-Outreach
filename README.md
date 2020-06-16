@@ -25,3 +25,5 @@ The web app enables users to access statistical data about particular demographi
 * Sass: sass --watch App.scss App.css
 
 ## Dependencies
+### Front-end
+### Back-end
