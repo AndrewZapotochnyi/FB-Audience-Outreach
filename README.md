@@ -7,6 +7,7 @@ The web app enables users to access statistical data about particular demographi
 
 FB-Audience-Outreach v0.0001
 
-Commands to launch: 
+## Commands to launch: 
 React - npm start 
 Rails - bin/rails s -b 0.0.0.0 -p 3001
+Sass - sass --watch App.scss App.css
