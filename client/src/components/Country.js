@@ -16,10 +16,6 @@ export default function Country(props) {
     .catch(console.log)
   }, [])
 
-  // if (!props.countryCode) {
-  //   props.setCountryCode("CA")
-  // }
-
   return (
     <div className="Autocomplete">
       <Autocomplete
@@ -36,8 +32,6 @@ export default function Country(props) {
           }
         }}
       />
-    </div>
-
-   
+    </div> 
   )
 }

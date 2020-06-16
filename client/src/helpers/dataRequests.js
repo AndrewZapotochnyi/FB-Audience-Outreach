@@ -1,9 +1,10 @@
 const axios = require('axios');
 const countryCodeDataSet = require('./countryCodeDataSet')
 
+// THESE REQUESTS AREN'T USED - OUTLINE FOR OUR ORIGIN DATA REQUESTS
+
 // Step 1 - Loop through the country array to find country_code
 // See /components/Country.js
-
 
 // Step 2 - After the country_code has been retrieved, do a city search
 

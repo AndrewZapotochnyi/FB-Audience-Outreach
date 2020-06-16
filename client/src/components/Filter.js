@@ -11,14 +11,11 @@ export default function Filter(props) {
   const [interest, setInterest] = useState("Enter Interest");
 
   const onSubmit = function(event) {
-    console.log(interest)
-    // event.preventDefault()
     props.onSubmitInterest(interest)
   }
 
   let interestName = {props};
 
-  // console.log(props);
   if (!props.loggedIn) {
     return (
     <Redirect to="/access" />
@@ -33,20 +30,10 @@ export default function Filter(props) {
       <City countryCode={props.countryCode} setCities={props.setCities} cities={props.cities} city={props.city} setCity={props.setCity} />
       <Age setMinAge={props.setMinAge} setMaxAge={props.setMaxAge}/>
       <section className="search">
-        {/* <input
-          placeholder={interest}
-          onChange={event => setInterest(event.target.value)}
-          name="search"
-          type="text"
-        /> */}
-
         <Interest setInterest={setInterest}/>
-
         { props.city === null &&
           <div>
-            <button className="Search-button" type="button" value="Submit" onClick={() => {
-                // onSubmit(interest)
-              }
+            <button className="Search-button" type="button" value="Submit" onClick={() => {}
         }>Search</button>
             <div className="chose-city"><b>Choose city first! </b></div>
           </div>

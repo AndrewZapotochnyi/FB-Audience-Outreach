@@ -1,27 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 import {HorizontalBar} from 'react-chartjs-2';
-
-
-// const defaultChartsData = {
-//   labels: [],
-//   datasets: [
-//     {
-//       label: 'My First dataset',
-//       backgroundColor: 'rgba(255,99,132,0.2)',
-//       borderColor: 'rgba(255,99,132,1)',
-//       borderWidth: 1,
-//       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-//       hoverBorderColor: 'rgba(255,99,132,1)',
-//       data: []
-//     }
-//   ]
-// };
-
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
+// Not using but something we want to try to add later 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -38,8 +21,6 @@ const useStyles = makeStyles((theme) => ({
   if (!saveObject) {
     return <div>No saved interests!</div>
   }
-  
-  console.log("Here is the saved object in state: ", saveObject )
 
   const defaultChartsData = {
     labels: saveObject ? saveObject.reachEstimates.map(item => item.interest_name) : [],
@@ -55,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
       }
     ]
   };
-
-  console.log("Charts data: ", defaultChartsData);
-  console.log(saveObject.selectedInterestCategory)
 
   const removeUnderscore = function(interestCategory) {
     return interestCategory.replace("_", " ")

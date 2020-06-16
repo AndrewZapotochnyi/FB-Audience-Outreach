@@ -2,21 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import {HorizontalBar} from 'react-chartjs-2';
 
-// const defaultChartsData = {
-//   labels: [],
-//   datasets: [
-//     {
-//       label: 'My First dataset',
-//       backgroundColor: 'rgba(255,99,132,0.2)',
-//       borderColor: 'rgba(255,99,132,1)',
-//       borderWidth: 1,
-//       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-//       hoverBorderColor: 'rgba(255,99,132,1)',
-//       data: []
-//     }
-//   ]
-// };
-
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
@@ -32,36 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-
-
   const Charts = ({ reachEstimates, setSelectedInterestCategory, onSubmitInterest, filterInterest, onSaveAudience, selectedInterestCategory, chartsHeight, setChartsHeight }) => {
   
+  // Something to work on further - changing height on charts: 
 
-   
-
-
-    useEffect(() => {
-      // this.forceUpdate()
-      }, [chartsHeight])
-
-  // const categoryTypes = ["family_statuses" , "industries", "interests", "behaviors", "income"]
-  
- 
-
-  // const typesRender = categoryTypes.map(type => {
-  //   return (
-  //     <Button style={{
-  //       color: "black",
-  //       borderColor: "black"
-  //       }} onClick={() => {
-        
-  //       setSelectedInterestCategory(type)
-        
-  //     }}>{type}</Button>)
-  //   });
-
+  // useEffect(() => {}, [chartsHeight])
 
   const categoryTypesSmart = [["family_statuses", "Family", 300 ], ["interests", "Interests", 1000], ["behaviors", "Behaviours", 1000 ], ["industries", "Industries", 1000 ], ["income", "Income (US)", 300]]
 
@@ -114,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
             {typesRender}
           </ButtonGroup>
 
-          <button class="save-search-button" onClick={() => onSaveAudience()}> Save Search </button>
+          <button className="save-search-button" onClick={() => onSaveAudience()}> Save Search </button>
         </div>
 
         
