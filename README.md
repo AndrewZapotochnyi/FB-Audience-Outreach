@@ -8,6 +8,9 @@ The web app enables users to access statistical data about particular demographi
 
 
 ## Commands to launch: 
+* Bundle install (front-end) 
+* rake db:reset (back-end)
+
 * React: npm start 
 * Rails: bin/rails s -b 0.0.0.0 -p 3001
 * Sass: sass --watch App.scss App.css
