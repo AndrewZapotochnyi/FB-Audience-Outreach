@@ -6,14 +6,14 @@ The web app enables users to access statistical data about particular demographi
 
 ## Preview
 ![“Landing Page”](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/landing.png?raw=true)
-
-
+<br/>
+<br/>
 !["Features"](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/features.png?raw=true)
-
-
+<br/>
+<br/>
 ![“Dashboard”](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/dashboard.png?raw=true)
-
-
+<br/>
+<br/>
 ![“Profile”](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/profile.png?raw=true)
 
 
