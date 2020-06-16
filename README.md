@@ -21,6 +21,7 @@ The web app enables users to access statistical data about particular demographi
 * bundle install (back-end)
 * rake db:reset (back-end) 
 * Rails: bin/rails s -b 0.0.0.0 -p 3001
+* React: npm start
 
 ## Dependencies
 ### Front-end
