@@ -1,4 +1,4 @@
-# The Social Scope 
+# TheSocialScope 
 Marketing tool for social media analytics and research using Facebook API.
 
 ## How to use this tool
