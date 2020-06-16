@@ -6,7 +6,11 @@ The web app enables users to access statistical data about particular demographi
 
 ## Preview
 ![“Landing Page”](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/landing.png?raw=true)
+
+!["Features"](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/features.png?raw=true)
+
 ![“Dashboard”](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/dashboard.png?raw=true)
+
 ![“Profile”](https://github.com/matichmike/FB-Audience-Outreach/blob/master/screenshots/profile.png?raw=true)
 
 * Rails: bin/rails s -b 0.0.0.0 -p 3001
