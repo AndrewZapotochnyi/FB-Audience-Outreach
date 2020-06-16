@@ -43,8 +43,6 @@ The web app enables users to access statistical data about particular demographi
 * "react-scripts": "3.4.1",
 * "sass": "^1.26.8"
 
-<br/>
-
 ### Back-end
 * ruby '2.7.1'
 * gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
