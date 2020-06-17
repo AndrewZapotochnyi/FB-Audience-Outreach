@@ -7,8 +7,6 @@ require('dotenv').config()
 const token = process.env.REACT_APP_ACCESS_TOKEN;
 const acct = process.env.REACT_APP_ACC_NUM;
 
-// Batch experiment - intend on using use later 
-
 // let interestsArray = [{"id":"6003840140052","name":"Agriculture"},{"id":"6004140335706","name":"Architecture"},{"id":"6002963523717","name":"Aviation"}]
 
 function getBatchEstimates()  {
@@ -57,6 +55,14 @@ function getBatchEstimates()  {
 }]
     
   const batchRequest = axios.post(`https://graph.facebook.com/reachestimate?batch=[${batch}]`)
+
+    
+
+    
+    
+
+    
+  
 
   return Promise.resolve(batchRequest);
   

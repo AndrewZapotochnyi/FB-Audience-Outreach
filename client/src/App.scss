@@ -17,19 +17,27 @@ body {
         width: 50px;
         margin-left: 30px;
 
-        // Animating attempt - coming back to it later 
 
+        
+          
+          
+        
         //   position: relative;
         //   animation: mymove 1s;
         //   animation-delay: 1s;
         //   animation-fill-mode: both;
         
+        
         // @keyframes mymove {
         //   from {top: 0px; background-color: white;}
         //   to {top: 0px; background-color: white; width: 100px; height: 100px; background: red;}
-        // }  
+        // }
+        
       }
 
+      
+      
+    
       .Nav {
         background-color: black;
         display: flex;
@@ -91,8 +99,13 @@ body {
           }
 
           .Nav-button:hover, .Nav-button:active {
+         
+            
             height: 80px;
+        
           }
+
+          
         }
 
         .avatar{
@@ -108,9 +121,13 @@ body {
           height: 50px;
           margin-left: 20px;
         }
+
+
       } 
     }
 
+    
+    
     .Filter-Charts {
       display: flex;
       // justify-content: flex-start;
@@ -232,6 +249,11 @@ body {
         margin-top: 0px;
       }
 
+      // .Charts{
+      //   width: 100%;
+        
+      // }
+
       .Chart{
         width: 80vh;
         // height: 80%;
@@ -276,6 +298,8 @@ body {
         box-shadow: 0px 0px 5px 5px #E9EBEC;
         color: black;
       }
+
+
     }
 
     .Access-page{
@@ -531,6 +555,9 @@ body {
         }
         
       }
+
+      
+
     }
   }
 }

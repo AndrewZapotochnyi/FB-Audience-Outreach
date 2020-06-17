@@ -11,8 +11,16 @@ const acct = process.env.REACT_APP_ACC_NUM;
 
 function getReachEstimate(filterInterest, minAge, maxAge, city, interestsArray, selectedInterestCategory ) {
 
+    // console.log("Receiving this: ", filterInterest)
+    console.log("Receiving array of interest", interestsArray)
+
     let reachEstimates = [];
+
     const requests = [];
+
+    console.log("Min age: ", minAge, "Max age: ", maxAge);
+
+  
 
   for (let interest of interestsArray) {
     
@@ -53,13 +61,31 @@ function getReachEstimate(filterInterest, minAge, maxAge, city, interestsArray, 
           }
       ]
     }&xref=f376957e49d959c`)
+    // .then(resp => {
+    //     // console.log(`People who live in Toronto, like ${filterInterest.name} and...`)
+    //     // console.log(interest.name)
+    //     // console.log(resp.data);
+    //     reachEstimates.push(resp.data)
+    // });
+
+    
+    
 
     requests.push(axiosRequest.then(res => {
-        return {...res, interest_name: interest.name}
-    }))
-  };
+            return {...res, interest_name: interest.name}
+        }
+        ));
+  }
 
   return Promise.all(requests);
+  
+//     .then((all) => {
+//       console.log("Here is the smth", all);
+//   })
+
+//   return reachEstimates;
+
 }
+
 
 export {getReachEstimate};

@@ -5,6 +5,7 @@ const axios = require('axios');
 
 export default function Interest(props) {
   let access_token = process.env.REACT_APP_ACCESS_TOKEN;
+  let country_code = props.countryCode;
 
   const [ searchText, setSearchText ] = useState("")
   const [ interestOptions, setInterestOptions ] = useState([])
@@ -17,6 +18,14 @@ export default function Interest(props) {
     .catch(console.error);
   }, [searchText])
 
+  // return (
+  //   <input
+  //     placeholder={interest_name}
+  //     onChange={event => props.setInterest(event.target.value)}
+  //     name="search"
+  //     type="text"
+  //   />
+  // )
   return (
     <div className="Autocomplete">
       <Autocomplete

@@ -42,12 +42,14 @@ export default function App() {
   const [saveObject, setSaveObject] = useState({})
   const [chartsHeight, setChartsHeight] = useState(500)
   
+  
   useEffect(() => {
     if (localStorage.jwt) 
     {
       setLoggedIn(true);
       }
     }, [])
+
 
   const onSaveAudience = function() {
     let params =
@@ -67,6 +69,12 @@ export default function App() {
   
   // Submit Form
   const onSubmitInterest = function(input) {
+    // console.log("APP JS Interest is set:", input)
+    // setSearchText(input);
+
+
+    
+
 
     axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${input}]&limit=10&locale=en_CA&access_token=${token}`)
       .then(res => {
@@ -76,17 +84,49 @@ export default function App() {
           
           if (response && response.id) {
             setFilterInterest({id: response.id, name: response.name});
+            //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
             console.log("SELECTED INTERESTS", listOfInterests[selectedInterestCategory])
             getReachEstimate({id: response.id, name: response.name}, minAge, maxAge, city, listOfInterests[selectedInterestCategory], selectedInterestCategory)
             .then(res => {
+              // console.log("here is res", res)
               setReachEstimates(res)
+              // console.log(res)
             })
           }
+          
         } 
       })
+
   }
 
+
+    
+
+    // useEffect(() => {
+    //   axios.get(`https://graph.facebook.com/search?type=adinterest&q=[${searchText}]&limit=10&locale=en_CA&access_token=${token}`)
+    //   .then(res => {
+    //     if (res) {
+    //       let response = res.data.data[0];
+    //       // console.log(response);
+          
+    //       if (response && response.id) {
+    //         setFilterInterest({id: response.id, name: response.name});
+    //         //setReachEstimates(getReachEstimate({id: response.id, name: response.name}));
+    //         // console.log(reachEstimates)
+    //         getReachEstimate({id: response.id, name: response.name}, minAge, maxAge)
+    //         .then(res => {
+    //           // console.log("here is res", res)
+    //           setReachEstimates(res)
+    //         })
+    //       }
+          
+    //     } 
+    //   })
+    // }, [searchText, minAge, maxAge]);
+  
+
   ///////////////////// END OF FILTER FUNCTIONALITY /////////////////////////
+
 
   useEffect(() => {
     onSubmitInterest(filterInterest.name)
@@ -140,12 +180,91 @@ export default function App() {
           interests: interestsInterests.slice(0, 30),
           behaviors: interestsBehaviors.slice(0, 30)
         });
+
+
+        // console.log("Education Statuses",interestIncome)
+
       } 
     })
     .catch(res => console.log(res))
   }, [])
 
   return (
+    // <Router>
+    //   <div>
+    //     <nav className="Nav">
+    //       <div className="Nav-logo-title">
+    //         <img src="https://clarkstjames.com/wp-content/uploads/2017/05/audience_research-e1495193156392.jpg" alt="Drawing of Professional People" width="200"></img>
+    //         <h1><Link to="/home">Audience Research</Link></h1>
+    //       </div>
+    //       <div className="Nav-links">
+    //         <button className="Nav-button">
+    //           <Link to="/about">About</Link>
+    //         </button>
+    //         {!loggedIn && <div><button className="Nav-button">
+    //           <Link to="/signup">Sign Up</Link>
+    //         </button>
+    //         <button className="Nav-button">
+    //         <Link to="/login">Login</Link>
+    //       </button>
+    //       </div>
+    //       }
+    //       {loggedIn && <div>
+    //         <button className="Nav-button" onClick={() => {
+    //           localStorage.removeItem("jwt")
+    //           setLoggedIn(false)
+    //         }
+    //         }>Logout</button>
+    //         <button className="Nav-botton">
+    //         <Link to="/profile">Profile</Link>
+    //         </button>
+    //       </div>
+    //       }
+    //       </div> 
+    //     </nav>
+    //     {/* {mode === CONFIRM && <Confirm        message = "Are you sure you want to delete this interview?"       confirmDelete = {confirmDelete}       onCancel = {errorCancel}     />} */}
+    //     <Switch>
+    //       <Route path="/home">
+    //         <Filter 
+    //           name={firstInterest.name} 
+    //           onSubmitInterest={onSubmitInterest} 
+    //           setMinAge={setMinAge} 
+    //           setMaxAge={setMaxAge} 
+    //           setCountryCode={setCountryCode} 
+    //           countryCode={countryCode} 
+    //           setCities={setCities} 
+    //           cities={cities} 
+    //           city={city} 
+    //           setCity={setCity}
+    //           city={city}/>
+    //         {reachEstimates.length && <Charts reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+            
+    //       </Route>
+    //       {/* <Route path="/home">
+    //         <Home />
+    //       </Route> */}
+    //       <Route path="/about">
+    //         {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
+    //         <About />
+    //       </Route>
+    //       <Route path="/signup">
+    //         <SignUp />
+    //       </Route>
+    //       <Route path="/login">
+    //         <Login 
+    //         setLoggedIn={setLoggedIn}
+    //         loggedIn={loggedIn}
+    //         />
+    //       </Route>
+    //       <Route path="/profile">
+    //         <Profile/>
+    //       </Route>
+    //     </Switch>
+    //   </div>
+    // </Router>
+
+    //////////////////////////////// NEW ROUTER ////////////////////////////////////////////
+
     <Router>
       <div className="Page">
         <style>
@@ -230,6 +349,7 @@ export default function App() {
               <Profile saveObject={saveObject}>
               </Profile>
             }
+              
               {saveObject.reachEstimates && <Saves saveObject={saveObject} reachEstimates={reachEstimates} setSelectedInterestCategory={setSelectedInterestCategory} filterInterest={filterInterest} onSubmitInterest={onSubmitInterest} onSaveAudience={onSaveAudience}/>}
             </div> 
           </Route>

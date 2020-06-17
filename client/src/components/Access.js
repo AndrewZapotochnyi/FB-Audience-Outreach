@@ -27,9 +27,9 @@ export default function Access(props) {
     .catch(error => {console.log(error)});
   }
 
-  return(
-    <div className="Access-page">
-    {props.loggedIn ? <Redirect to="/home" /> : <form className="Access-form" onSubmit={(event) => handleOnSubmit(event)}>
+    return(
+      <div className="Access-page">
+      {props.loggedIn ? <Redirect to="/home" /> : <form className="Access-form" onSubmit={(event) => handleOnSubmit(event)}>
       <h1 className="Access-header">Access</h1>
       <input className="Access-field"
         name="email"
@@ -49,6 +49,21 @@ export default function Access(props) {
         />
       <input className="Login-button" type="submit" value="Enter" />
     </form>}
-  </div>
-  )
-}
+    </div>
+    )
+  }
+
+  // return (
+  //   <>
+  //     <h1 className="Link-title">Login Here:</h1>
+  //     <div className="Link-body-surrounding">
+  //       <form className="Link-form">
+  //         <input type="text" name="email" placeholder="Email"></input>
+  //         <input type="text" name="password" placeholder="Password"></input>
+  //         <input type="submit" value="Login" className="Link-button"></input>
+  //       </form>
+  //     </div>
+  //     <a href="signup" className="Link-redirect">Don't have an account?</a>
+  //   </>
+  // )
+// }
