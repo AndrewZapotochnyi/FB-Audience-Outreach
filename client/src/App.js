@@ -313,7 +313,7 @@ export default function App() {
         <Switch>
          
             <Route path="/home">
-            <div className="Filter-Charts">
+            <div class ="Filter-Charts">
               <Filter
                 name={firstInterest.name} 
                 onSubmitInterest={onSubmitInterest} 
